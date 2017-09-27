@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: one
+  name: MyString
+  description: MyText
+  video: MyString
+  price: MyString
+  availibility: false
+
+two:
+  category: two
+  name: MyString
+  description: MyText
+  video: MyString
+  price: MyString
+  availibility: false
