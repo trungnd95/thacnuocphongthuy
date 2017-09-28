@@ -1,15 +1,38 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
-// vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require rails-ujs
 //= require turbolinks
+//= require prototype
+//= require jquery-1.10.2.min
+//= require noconflict
+//= require ccard
+//= require validation
+//= require builder
+//= require effects
+//= require dragdrop
+//= require controls
+//= require slider
+//= require js
+//= require form
+//= require translate
+//= require cookies
+//= require modernizr.custom.min
+//= require selectivizr
+//= require matchMedia
+//= require matchMedia.addListener
+//= require enquire
+//= require app
+//= require imagesloaded
+//= require minicart
+//= require cmsmartmenu
+//= require livesearch
+//= require thumbs
+//= require jquery-ui-1-10-4
+//= require ajaxlogin
+//= require tm-stick-up
+//= require owl.carousel.min
+//= require bootstrap.min
+//= require front
+//= require jquery.easydropdown.min
+//= require jquery.animateNumber
 //= require_tree .
+
+

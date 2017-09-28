@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Thacnuocphongthuy</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render "partials/head" %>
   </head>
-
-  <body>
+  <body class="cms-index-index cms-home">
     <%= yield %>
+    <%= render "partials/footer" %>
   </body>
 </html>
