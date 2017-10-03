@@ -3,10 +3,8 @@
   <head>
     <%= render "partials/head" %>
   </head>
-  <body class="cms-index-index cms-home">
-    <div class="wrapper">
-      <%= yield %>
-      <%= render "partials/footer" %>
-    </div>
+  <body class="cms-index-index <%= current_page?(root_url) ? 'cms-home' : '' %>">
+    <%= yield %>
+    <%= render "partials/footer" %>
   </body>
 </html>
