@@ -33,6 +33,7 @@
 //= require front
 //= require jquery.easydropdown.min
 //= require jquery.animateNumber
+//= require toastr
 //= require_tree .
 
 
