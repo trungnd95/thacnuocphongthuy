@@ -4,7 +4,9 @@
     <%= render "partials/head" %>
   </head>
   <body class="cms-index-index cms-home">
-    <%= yield %>
-    <%= render "partials/footer" %>
+    <div class="wrapper">
+      <%= yield %>
+      <%= render "partials/footer" %>
+    </div>
   </body>
 </html>
