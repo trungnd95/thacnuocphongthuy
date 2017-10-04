@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render "partials/head" %>
+</head>
+<body class="hold-transition skin-blue sidebar-mini admin">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <%= render "partials/admin_header" %>
+  <!-- Left side column. contains the sidebar -->
+  <%= render "partials/admin_sidebar" %>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <%= yield :title_manage_page %>
+      </h1>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+      <!-- Default box -->
+      <div class="box">
+        <%= yield %>
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%= render "partials/admin_footer" %>
+</div>
+<!-- ./wrapper -->
+<script>
+  $(document).on('turbolinks:load', function(){
+    $('.sidebar-menu').tree()
+  })
+</script>
+</body>
+</html>

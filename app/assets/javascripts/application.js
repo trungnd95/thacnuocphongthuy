@@ -34,6 +34,10 @@
 //= require jquery.easydropdown.min
 //= require jquery.animateNumber
 //= require toastr
+//= require adminlte.min
+//= require demo
+//= require fastclick
+//= require jquery.slimscroll.min
 //= require_tree .
 
 
