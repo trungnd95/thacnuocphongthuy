@@ -15,5 +15,6 @@ module Thacnuocphongthuy
     # Application configuration should go into files in config/initializer
     # -- all .rb files in that directory are automatically loaded.
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.autoload_paths += Dir["#{config.root}/lib"]
   end
 end

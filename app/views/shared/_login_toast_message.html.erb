@@ -1,0 +1,7 @@
+<% unless flash.empty? %>
+  <script type="text/javascript">
+    <% flash.each do |f| %>
+      toastr["error"]("<%= f[1] %>")
+    <% end %>
+  </script>
+<% end %>
