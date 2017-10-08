@@ -1,0 +1,29 @@
+<%= content_for :title_manage_page do %>
+  Quản lý danh mục
+<% end %>
+
+<div class="box-header with-border">
+  <h3 class="box-title">Tạo mới</h3>
+</div>
+
+<%= form_for [:admin, @category] do |f| %>
+  <%= render "shared/model_object_error" %>
+  <div class="box-body">
+    <div class="form-group">
+      <%= f.label :name, "Tên" %>
+      <%= f.text_field :name, class: "form-control", placeholder: "Tên danh mục" %>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPasswórd">Password</label>
+      <input type="password" class="form-control" id="exampleInputPasswórd" placeholder="Password">
+      <%= f.label :parent_id, "Danh mục cha" %>
+      <%= select("categoy", "paren_id", @categories.collect {|cat| [ cat.name, cat.id ] }, {include_blank: 'Nope'}) %>
+    </div>
+  <!-- /.box-body -->
+  <div class="box-footer">
+    <%= f.submit "Lưu lại", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+
+
