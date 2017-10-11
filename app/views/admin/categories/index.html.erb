@@ -1,2 +1,29 @@
-<h1>Admin::Categories#index</h1>
-<p>Find me in app/views/admin/categories/index.html.erb</p>
+<%= content_for :title_manage_page do %>
+Quản lý danh mục
+<% end %>
+<div class="box-header with-border">
+  <h3 class="box-title">Danh sách danh mục sản phẩm </h3>
+</div>
+<%= link_to new_admin_category_path, class: "btn btn-primary" do %>
+  <i class="fa fa-plus" aria-hidden="true"></i>
+  Thêm mới
+<% end %>
+<div class="box box-success" style="margin-top:20px">
+  <ul class="sidebar-menu tree categories_index_1" data-widget="tree">
+    <li class="treeview menu-open">
+    <a href="javascipt:void(0)" style="background: teal">
+        <i class="fa fa-share"></i> <span>Tất cả</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu categories_index" style="display: block;background:transparent;">
+        <% @categories.each do |category| %>
+          <% if category.parent_id.blank? %>
+            <%= subcategories_recursive(category) %>
+          <% end %>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>

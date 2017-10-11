@@ -1,0 +1,26 @@
+<% if category.parent_id.blank? %>
+<li class="<%= categoy.subcategories.present? treeview : '' %>">
+  <a href="#"><i class="fa fa-circle-o"></i> <%= category.name %>
+    <span class="pull-right-container">
+      <i class="fa fa-angle-lèt pull-right"></i>
+    </span>
+  </a>
+  <% if category.subcategories.present? %>
+    <ul class="treeview-menu" >
+      <%= category.subcategories.each do |sub| %>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-circle-o"></i> Level Tưo
+            <span class="pull-right-container">
+              <i class="fa fa-angle-lèt pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</li>
+<%= end %>

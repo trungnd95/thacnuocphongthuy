@@ -1,11 +1,11 @@
 <% unless object.errors.empty? %>
-    <div class="row">
-      <div class="card red">
-        <div class="card-content white-text">
-          <% object.errors.full_messages.each do |msg| %>
-              x <%= msg %><br/>
-          <% end %>
-        </div>
-      </div>
+  <div class="box box-widget box-danger bg-red">
+    <div class="box-body white-text">
+      <ul>
+      <% object.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
+  </div>
 <% end %>
