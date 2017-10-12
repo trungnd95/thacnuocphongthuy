@@ -13,7 +13,6 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def create
-    byebug
     unless params[:category][:parent_id]
       category_params[:parent_id] = nil
     end

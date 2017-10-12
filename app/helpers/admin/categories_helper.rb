@@ -1,6 +1,10 @@
 module Admin::CategoriesHelper
   def subcategories_recursive(category)
     content = ''
+    content << "<a href='#modal-default' class='text-warning' data-toggle='modal' data-target='#modal-default'>
+                Xóa
+              </a></br>"
+    content << "#{link_to "Sửa", edit_admin_category_path(category), class: 'text-danger'}"
     content << "<li class='#{category.subcategories.present? ? 'treeview' : ''}'>"
     content << "<a href='#'><i class='fa fa-circle-o'></i>#{category.name}"
     if category.subcategories.present?
