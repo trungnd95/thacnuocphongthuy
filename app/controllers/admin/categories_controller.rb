@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :set_category, except: [:index, :new]
 
   def index
-    @categories = Category.includes([:parent, :subcategories]).all
+    @categories = Category.includes([:parent, :subcategories]).order(created_at: :desc).all
   end
 
   def new
@@ -37,6 +37,36 @@ class Admin::CategoriesController < ApplicationController
         end
       end
     end
+  end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @category.update category_params
+        format.html do
+          flash[:success] = "Sửa Đổi Thành Công !!!"
+          redirect_to admin_categories_path
+        end
+        format.json do
+          render json: @category, status: :ok
+        end
+      else
+        format.html do
+          flash[:error] = "Lỗi xảy ra!"
+          redirect_to action: :edit
+        end
+        format.json do
+          render json: @category.errors, status: :unprocessable_entity
+        end
+      end
+    end
+  end
+
+  def destroy
+    @category.destroy
+    render json: {id: params[:id]}
   end
 
   private

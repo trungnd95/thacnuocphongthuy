@@ -1,6 +1,8 @@
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
-//= require jquery-1.10.2.min
+//= require turbolinks-compatibility
 //= require bootstrap.min
 //= require prototype
 //= require toastr
@@ -8,5 +10,6 @@
 //= require demo
 //= require fastclick
 //= require jquery.slimscroll.min
+//= require admin/categories
 
 

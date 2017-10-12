@@ -1,0 +1,21 @@
+<%= form_for [:admin, category] do |f| %>
+<%= render "shared/model_object_error", object: f.object %>
+<div class="box-body">
+  <div class="form-group">
+    <%= f.label :name, "Tên" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Tên danh mục" %>
+  </div>
+  <div class="form-group">
+    <% unless @categories.blank? %>
+    <%= f.label :parent_id, "Danh mục cha" %>
+    <%= select("category", "parent_id", @categories.collect {|cat| [ cat.name, cat.id ] }, {include_blank: 'Nope'}, class: "form-control") %>
+    <% end %>
+  </div>
+</div>
+<!-- /.box-body -->
+<div class="box-footer">
+  <%= f.submit "Lưu lại", class: "btn btn-primary" %>
+</div>
+<% end %>
+
+
