@@ -1,0 +1,10 @@
+<%= content_for :title_manage_page do %>
+Quản lý Sản phẩm
+<% end %>
+
+<div class="box-header with-border">
+  <h3 class="box-title">Thay đổi thông tin sản phẩm</h3>
+</div>
+<div class="box-body">
+  <%= render "form", item: @item  %>
+</div>

@@ -11,5 +11,9 @@
 //= require fastclick
 //= require jquery.slimscroll.min
 //= require admin/categories
+//= require admin/custom
+//= require admin/preview_image
+//= require jquery.dataTables.min
+//= require dataTables.bootstrap.min
 
 

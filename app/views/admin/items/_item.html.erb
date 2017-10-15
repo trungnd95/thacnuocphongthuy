@@ -1,0 +1,62 @@
+<tr role="row" class="odd">
+  <td class="sorting_1"><%= index + 1 %></td>
+  <td><%= item.name %></td>
+  <td><%= item.price %> VND</td>
+  <td><%= item.category.name %></td>
+  <td>
+    <a href="#" data-toggle="modal" data-target="#modal-des-info">
+    Xem
+    </a>
+    <%
+      content_des =  []
+      content_des << "<p>#{item.description}</p>"
+    %>
+    <%= render partial: "partials/modal",
+            locals: {act_name: "des-info", title: "Thông tin mô tả",
+            content:  content_des, save: false } %>
+  </td>
+  <td>
+    <% if item.video.empty? %>
+      Ko có
+    <% else %>
+      <a href="#" data-toggle="modal" data-target="#modal-video">Xem</a>
+      <%
+        content_vid = []
+        content_vid <<  "<iframe class='youtube-player' type='text/html' width='560' height='385' src='https://www.youtube.com/embed/A7ocNp3Agvs' frameborder='0'></iframe>"
+      %>
+      <%= render partial: "partials/modal",
+          locals: {act_name: "video", title: "Video Mô Tả",
+          content:  content_vid, save: false } %>
+    <% end %>
+  </td>
+  <td><%= item.availibility ? 'Đã có hàng' : 'Chưa có hàng' %></td>
+  <td><%= item.promo.nil? ? 0 : item.promo %>%</td>
+  <td>
+    <%= item.orders.count %> đơn hàng</br>
+    <% if item.orders.count > 0 %>
+      <a href="#">Xem ds</a>
+    <% end %>
+  </td>
+  <td><%= item.images.count %> hình</td>
+  <td><a href="#">Xem ds</a></td>
+  <td>
+    <%= link_to edit_admin_item_path(item), class: 'btn btn-warning' do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      Sửa
+    <% end %>
+    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-del-item" >
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+      Xóa
+    </a>
+   <%
+      content_del = []
+      content_del << "<p>Bạn có chắc chắn muốn xóa!!!</p>"
+    %>
+    <%= render partial: "partials/modal",
+              locals: {act_name: "del-item", title: "Xác nhận xóa",
+                      content: content_del, save: false
+              }
+    %>
+  </td>
+</tr>
+

@@ -1,0 +1,36 @@
+<%= content_for :title_manage_page do %>
+Quản lý Sản phẩm
+<% end %>
+<div class="box-header with-border">
+  <h3 class="box-title">Danh sách sản phẩm</h3>
+</div>
+<div class="row" style="margin-top: 20px;padding: 0px 10px">
+  <div class="col-sm-12">
+    <table id="list_items" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th style="width: 20px !important">STT</th>
+          <th>Tên sản phẩm</th>
+          <th>Gía</th>
+          <th>Danh mục</th>
+          <th>Mô tả</th>
+          <th>Video Mô tả</th>
+          <th>Trạng thái</th>
+          <th style="width: 20px !important">Trạng thái khuyến mại</th>
+          <th>Số lượng đơn hàng</th>
+          <th>Hình ảnh</th>
+          <th style="width: 20px !important">Reviews & Comments</th>
+          <th style="width: 110px !important">Thao Tác</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        <% @items.each_with_index do |item, index| %>
+          <%= render "item", item: item, index: index %>
+        <% end %>
+        <%= paginate @items %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>

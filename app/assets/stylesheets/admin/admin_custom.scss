@@ -24,3 +24,33 @@
   }
 }
 
+.label_checkbox {
+  &:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out,color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out,color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out,color 0.15s ease-in-out;
+  }
+}
+
+.promo {
+  .promo_add {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.preview_each_wrap {
+  display: inline-block;
+  margin-right: 10px;
+}

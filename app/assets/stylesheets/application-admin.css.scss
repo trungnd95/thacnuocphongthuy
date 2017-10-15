@@ -11,12 +11,13 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap
- *= require _all-skins.min
  *= require font-awesome
- *= require AdminLTE.min
  *= require ionicons.min
  *= require toastr
  *= require flash_devise
+ *= require dataTables.bootstrap.min
+ *= require AdminLTE.min
+ *= require _all-skins.min
  *= require_self
  */
 
