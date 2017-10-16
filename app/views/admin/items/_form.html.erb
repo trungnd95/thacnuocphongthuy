@@ -64,7 +64,7 @@
                 <%= p.label :url, "Chọn file ảnh" %><br>
                 <%= p.file_field :url, multiple: true, name: "images[url][]",
                   class: "upload-image" %>
-                <% unless p.object.url.nil? %>
+                <% unless p.object.url %>
                   <%= image_tag p.object.url.url, size: "320x240", alt: "Ảnh upload", class: "thumbnail" %>
                 <% end %>
             </div>

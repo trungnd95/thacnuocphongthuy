@@ -28,9 +28,9 @@ class Admin::CategoriesController < ApplicationController
         end
       else
         format.html do
-          flash[:error] = "Lỗi khi tạo :(("
-          render action: :new
-          # redirect_to :back
+          flash[:warning] = "Lỗi khi tạo :(("
+          flash[:error] = @category.errors.full_messages
+          redirect_to new_admin_category_path, alert: @category.errors.full_messages
         end
         format.json do
           render json: @category.errors, status: :unprocessable_entity
