@@ -20,13 +20,17 @@ class Admin::ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         unless params[:images].nil?
-          params[:images]['url'].each do |a|
-            @item.images.create!(url: a,
-                  thumbnail: (a == params[:images]['thumbnail']) ? '1' : '0')
+          unless params[:images][:url].nil? && params[:images][:thumbnail].nil?
+            params[:images]['url'].each do |a|
+              @item.images.create!(url: a,
+                    thumbnail: (a.original_filename == params[:images]['thumbnail']) ? '1' : '0')
+            end
+          else
+            flash[:warning] = "Chưa lưu ảnh, do bạn chưa chọn ảnh làm hình đại diện cho sản phẩm. \nVào chỉnh sửa sản phẩm để thêm lại ảnh và chọn thumbnail!!!"
           end
         end
         format.html do
-          flash[:succes] = "Tạo sản phẩm thành công !!!"
+          flash[:success] = "Tạo sản phẩm thành công !!!"
           redirect_to admin_items_path
         end
         format.json do
@@ -49,26 +53,48 @@ class Admin::ItemsController < ApplicationController
   end
 
   def update
-    byebug
     respond_to do |format|
       if @item.update item_params
-        unless params[:images]['flag'].nil?
-          params[:images]['flag'].uniq.each do |flag|
-            Image.find_by_id(flag).destroy
-          end
-        end
         unless params[:images].nil?
-          params[:images]['url'].each do |a|
-            @item.images.create!(url: a,
-                  thumbnail: (a == params[:images]['thumbnail']) ? '1' : '0')
+          unless params[:images]['url'].nil?
+            unless params[:images][:thumbnail].nil?
+              unless params[:images]['flag'].nil?
+                params[:images]['flag'].uniq.each do |flag|
+                  Image.find_by_id(flag).destroy
+                end
+              end
+              params[:images]['url'].each do |a|
+                @item.images.create!(url: a,
+                      thumbnail: (a.original_filename == params[:images]['thumbnail']) ? '1' : '0')
+              end
+              format.html do
+                flash[:success] = "Thay đổi thành công !!!"
+                redirect_to admin_items_path
+              end
+              format.json do
+                render json: @item, status: :ok
+              end
+            else
+              format.html do
+                flash[:error] = "Chưa update được ảnh do bạn chưa chọn ảnh nào làm ảnh đại diện cho sản phẩm"
+                redirect_to edit_admin_item_path @item
+              end
+            end
+          else
+            @item.update_images_thumb params[:images]['thumbnail']
+            format.html do
+              flash[:success] = "Thay đổi thành công !!!"
+              redirect_to admin_items_path
+            end
+            format.json do
+              render json: @item, status: :ok
+            end
           end
-        end
-        format.html do
-          flash[:success] = "Thay đổi thành công !!!"
-          redirect_to admin_items_path
-        end
-        format.json do
-          render json: @item.errors, status: :unprocessable_entity
+        else
+          format.html do
+            flash[:error] = "Chưa update được ảnh do bạn chưa chọn ảnh nào làm ảnh đại diện cho sản phẩm"
+            redirect_to edit_admin_item_path @item
+          end
         end
       else
         format.html do
@@ -82,6 +108,12 @@ class Admin::ItemsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @item.images.destroy_all
+    @item.destroy
+    render json: {id: params[:id]}
   end
 
   private

@@ -63,7 +63,7 @@
                 class: "upload-image" %>
               <% unless p.object.url.url.nil? %>
                 <div class="image_pre_load">
-                  <input type="radio", name="images[thumbnail][]",<%= p.object.thumbnail? ? 'checked' : '' %>>
+                  <input type="radio", name="images[thumbnail]", value="<%= p.object.url.file.original_filename %>", <%= p.object.thumbnail? ? 'checked' : '' %>>
                   <%= image_tag p.object.url.url, size: "210x160", alt: "Ảnh upload", class: "thumbnail" %>
                   <a href="#" data-toggle="modal" data-target="#modal-delete-image" class="delete_image_icon delete_img_<%= p.object.id %>" data-id="<%= p.object.id %>">
                     <i class="fa fa-times-circle text-danger" aria-hidden="true"></i>
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin: 0px 15px">
       <div class="col-sm-12">
         <div class="box-footer">
           <%= f.submit "Lưu lại", class: "btn btn-primary" %>

@@ -44,7 +44,8 @@
       <i class="fa fa-pencil" aria-hidden="true"></i>
       Sửa
     <% end %>
-    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-del-item" >
+    <a href="#" class="btn btn-danger del_item_<%= item.id %>" data-toggle="modal" data-target="#modal-del-item"
+      data-id="<%= item.id %>">
       <i class="fa fa-trash-o" aria-hidden="true"></i>
       Xóa
     </a>
@@ -54,7 +55,7 @@
     %>
     <%= render partial: "partials/modal",
               locals: {act_name: "del-item", title: "Xác nhận xóa",
-                      content: content_del, save: false
+                      content: content_del, save: true
               }
     %>
   </td>

@@ -14,4 +14,10 @@ class Item < ApplicationRecord
   def reject_images (attributes)
     attributes['url'].blank?
   end
+
+  def update_images_thumb thumb_val
+    self.images.each do |img|
+      img.update thumbnail: (img.url.file.original_filename == thumb_val) ? true : false
+    end
+  end
 end
