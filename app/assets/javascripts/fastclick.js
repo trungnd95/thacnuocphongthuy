@@ -1,4 +1,5 @@
-;(function () {
+jQuery( document ).ready(function( $ ) {
+(function () {
 	'use strict';
 
 	/**
@@ -839,3 +840,4 @@
 		window.FastClick = FastClick;
 	}
 }());
+})

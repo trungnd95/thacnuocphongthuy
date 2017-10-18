@@ -3,11 +3,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<%= asset_url('images.jpg')%>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Trung Manucian</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="javascript:void(0)"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
@@ -21,9 +21,9 @@
         </div>
       </form>
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Quản Lý</li>
+        <li class="header"><h4 style="color: #fff"><strong><b><i>Quản Lý</i></b></strong></h4></li>
         <li class="treeview">
-          <a href="#">
+          <a href="javascript:void(0)">
             <i class="fa fa-dashboard"></i> <span>Danh mục</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -42,7 +42,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="javascript:void(0)">
             <i class="fa fa-laptop" aria-hidden="true"></i><span>Sản phầm</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -60,9 +60,44 @@
               <% end %>
           </ul>
         </li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        <li>
+          <a href="javascript:void(0)">
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+            <span>Đơn hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <i class="fa fa-rss" aria-hidden="true"></i>
+            <span>Phản hồi</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <span>Bình luận và xếp hạng sp</span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="javascript:void(0)">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            <span>Bài Viết</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <%= link_to "javascript:void(0)" do %>
+                <i class="fa fa-list" aria-hidden="true"></i>Danh sách
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "javascript:void(0)" do %>
+                <i class="fa fa-plus" aria-hidden="true"></i>Thêm mới
+              <% end %>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
