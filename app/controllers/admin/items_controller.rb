@@ -51,6 +51,7 @@ class Admin::ItemsController < ApplicationController
 
   def edit
   end
+
   private
   def load_item
     @item = Item.find_by_id(params[:id])
