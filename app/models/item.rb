@@ -11,4 +11,7 @@ class Item < ApplicationRecord
   validates :description, presence: true, length: {minimum: 20}
   validates :price, presence: true
 
+  def reject_images (attributes)
+    attributes['url'].blank?
+  end
 end

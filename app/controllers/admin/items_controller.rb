@@ -18,38 +18,70 @@ class Admin::ItemsController < ApplicationController
   def create
     @item =  Item.new item_params
     respond_to do |format|
-      if params[:images]['url'].count > 0
-        if @item.save &&  params[:images]['url'].count > 0
+      if @item.save
+        unless params[:images].nil?
           params[:images]['url'].each do |a|
             @item.images.create!(url: a,
                   thumbnail: (a == params[:images]['thumbnail']) ? '1' : '0')
-            format.html do
-              flash[:succes] = "Tạo sản phẩm thành công !!!"
-              redirect_to admin_items_path
-            end
-            format.json do
-              render json: @item, status: :ok
-            end
-          end
-        else
-          format.html do
-            flash[:warning] = "Có lỗi khi tạo sản phẩm :(( "
-            flash[:error] = @item.errors.full_messages
-            redirect_to new_admin_item_path
-          end
-          format.json do
-            render json: @item.errors, status: :unprocessable_entity
           end
         end
+        format.html do
+          flash[:succes] = "Tạo sản phẩm thành công !!!"
+          redirect_to admin_items_path
+        end
+        format.json do
+          render json: @item, status: :ok
+        end
       else
-        flash[:error] = "Please add more images to item"
-        redirect_to new_admin_item_path
+        format.html do
+          flash[:warning] = "Có lỗi khi tạo sản phẩm :(( "
+          flash[:error] = @item.errors.full_messages
+          redirect_to new_admin_item_path
+        end
+        format.json do
+          render json: @item.errors, status: :unprocessable_entity
+        end
       end
     end
-
   end
 
   def edit
+  end
+
+  def update
+    byebug
+    respond_to do |format|
+      if @item.update item_params
+        unless params[:images]['flag'].nil?
+          params[:images]['flag'].uniq.each do |flag|
+            Image.find_by_id(flag).destroy
+          end
+        end
+        unless params[:images].nil?
+          params[:images]['url'].each do |a|
+            @item.images.create!(url: a,
+                  thumbnail: (a == params[:images]['thumbnail']) ? '1' : '0')
+          end
+        end
+        format.html do
+          flash[:success] = "Thay đổi thành công !!!"
+          redirect_to admin_items_path
+        end
+        format.json do
+          render json: @item.errors, status: :unprocessable_entity
+        end
+      else
+        format.html do
+          flash[:warning] = "Xảy ra lỗi khi cập nhật thông tin. Kiểm tra lại các
+          trường đã nhập đủ thông tin chưa?"
+          flash[:error] = @item.errors.full_messages
+          redirect_to edit_admin_item_path(@item)
+        end
+        format.json do
+          render json: @item.errors, status: :unprocessable_entity
+        end
+      end
+    end
   end
 
   private
@@ -64,7 +96,6 @@ class Admin::ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :video, :price,
-                                :availibility, :category_id, :promo,
-                                images_attributes: [:id, :url, :image_type, :thumbnail])
+                                :availibility, :category_id, :promo)
   end
 end
