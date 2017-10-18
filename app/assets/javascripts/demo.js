@@ -4,6 +4,7 @@
  * You should not use this file in production.
  * This file is for demo purposes only.
  */
+jQuery( document ).ready(function( $ ) {
 $(function () {
   'use strict'
 
@@ -346,4 +347,5 @@ $(function () {
   setup()
 
   $('[data-toggle="tooltip"]').tooltip()
+})
 })
