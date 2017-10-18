@@ -16,30 +16,31 @@ class Admin::ItemsController < ApplicationController
   end
 
   def create
-    @item =  Item.new item_params
-    respond_to do |format|
-      if @item.save &&  params[:images]['url'].count > 0
-        params[:images]['url'].each do |a|
-          @item.images.create!(url: a,
-                thumbnail: (a == params[:images]['thumbnail']) ? '1' : '0')
-          format.html do
-            flash[:succes] = "Tạo sản phẩm thành công !!!"
-            redirect_to admin_items_path
-          end
-          format.json do
-            render json: @item, status: :ok
-          end
-        end
-      else
-        format.html do
-          flash[:error] = "Có lỗi khi tạo sản phẩm :(( "
-          render action: :new
-        end
-        format.json do
-          render json: @item.errors, status: :unprocessable_entity
-        end
-      end
-    end
+    byebug
+    # @item =  Item.new item_params
+    # respond_to do |format|
+    #   if @item.save &&  params[:images]['url'].count > 0
+    #     params[:images]['url'].each do |a|
+    #       @item.images.create!(url: a,
+    #             thumbnail: (a == params[:images]['thumbnail']) ? '1' : '0')
+    #       format.html do
+    #         flash[:succes] = "Tạo sản phẩm thành công !!!"
+    #         redirect_to admin_items_path
+    #       end
+    #       format.json do
+    #         render json: @item, status: :ok
+    #       end
+    #     end
+    #   else
+    #     format.html do
+    #       flash[:error] = "Có lỗi khi tạo sản phẩm :(( "
+    #       render action: :new
+    #     end
+    #     format.json do
+    #       render json: @item.errors, status: :unprocessable_entity
+    #     end
+    #   end
+    # end
   end
 
   def edit

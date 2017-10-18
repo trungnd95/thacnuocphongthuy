@@ -62,13 +62,12 @@
            <%= f.fields_for :images do |p| %>
              <div class="field">
                 <%= p.label :url, "Chọn file ảnh" %><br>
-                <%= p.file_field :url, multiple: true, name: "images[url][]",
-                  class: "upload-image", value: p.object.url.url.nil? ? '' : p.object.url.url  %>
-                  <% unless p.object.url.url.nil? %>
-                    <div class="image_pre_load">
-                        <%= image_tag p.object.url.url, size: "240x160", alt: "Ảnh upload", class: "thumbnail" %>
-                    </div>
-                  <% end %>
+                <%= p.file_field :url, multiple: true, class: "upload-image" %>
+                <% unless p.object.url.url.nil? %>
+                  <div class="image_pre_load">
+                      <%= image_tag p.object.url.url, size: "240x160", alt: "Ảnh upload", class: "thumbnail" %>
+                  </div>
+                <% end %>
             </div>
           <% end %>
           <div id="preview" style="margin-top: 20px">
