@@ -47,9 +47,6 @@
             </div>
           </div>
         </div>
-        <div class="box-footer">
-          <%= f.submit "Lưu lại", class: "btn btn-primary" %>
-        </div>
       </div>
     </div>
 
@@ -59,19 +56,32 @@
           <h4 class="box-title">Thêm ảnh cho sản phẩm</h4>
         </div>
         <div class="box-body">
-           <%= f.fields_for :images do |p| %>
-             <div class="field">
-                <%= p.label :url, "Chọn file ảnh" %><br>
-                <%= p.file_field :url, multiple: true, class: "upload-image" %>
-                <% unless p.object.url.url.nil? %>
-                  <div class="image_pre_load">
-                      <%= image_tag p.object.url.url, size: "240x160", alt: "Ảnh upload", class: "thumbnail" %>
-                  </div>
-                <% end %>
+         <%= f.fields_for :images, @item.images.count > 0 ? '' : @item.images.build do |p| %>
+           <div class="field">
+              <%= p.label :url, "Chọn file ảnh" %><br>
+              <%= p.file_field :url, multiple: true, name: "images[url][]",
+                class: "upload-image" %>
+              <% unless p.object.url.url.nil? %>
+                <div class="image_pre_load">
+                  <input type="radio", name="images[thumbnail][]",<%= p.object.thumbnail? ? 'checked' : '' %>>
+                  <%= image_tag p.object.url.url, size: "210x160", alt: "Ảnh upload", class: "thumbnail" %>
+                  <a href="#" data-toggle="modal" data-target="#modal-delete-image" class="delete_image_icon delete_img_<%= p.object.id %>" data-id="<%= p.object.id %>">
+                    <i class="fa fa-times-circle text-danger" aria-hidden="true"></i>
+                  </a>
+                  <%= render partial: "partials/modal", locals: {act_name: 'delete-image', title: 'Xác nhận xóa', content: ['<p>Bạn có chắc chắn muốn xóa!</p>'], save: true } %>
+                </div>
+              <% end %>
             </div>
           <% end %>
           <div id="preview" style="margin-top: 20px">
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="box-footer">
+          <%= f.submit "Lưu lại", class: "btn btn-primary" %>
         </div>
       </div>
     </div>

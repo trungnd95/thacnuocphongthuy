@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'images/delete'
+
   devise_for :admins , controllers: {
         sessions: 'devise_admins/sessions'
       }
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
     root 'admin#index'
     resources :categories
     resources :items
+    resources :images, only: [:destroy]
   end
   root 'home_pages#index'
 end

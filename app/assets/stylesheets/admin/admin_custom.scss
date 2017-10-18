@@ -54,3 +54,13 @@
   display: inline-block;
   margin-right: 10px;
 }
+
+.image_pre_load {
+  margin-top: 15px;
+  position: relative;
+  .delete_image_icon {
+    position: absolute;
+    top: 15px;
+    left: 205px;
+  }
+}
