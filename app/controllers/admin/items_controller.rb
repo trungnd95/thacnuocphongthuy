@@ -91,9 +91,16 @@ class Admin::ItemsController < ApplicationController
             end
           end
         else
-          format.html do
-            flash[:error] = "Chưa update được ảnh do bạn chưa chọn ảnh nào làm ảnh đại diện cho sản phẩm"
-            redirect_to edit_admin_item_path @item
+          if @item.images.count > 0
+            format.html do
+              flash[:error] = "Chưa update được ảnh do bạn chưa chọn ảnh nào làm ảnh đại diện cho sản phẩm"
+              redirect_to edit_admin_item_path @item
+            end
+          else
+            format.html do
+              flash[:success] = "Thay đổi thành công !!!"
+              redirect_to admin_items_path
+            end
           end
         end
       else
