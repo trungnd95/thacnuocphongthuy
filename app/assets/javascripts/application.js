@@ -1,7 +1,10 @@
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
+//= require turbolinks-compatibility
+//= require bootstrap.min
 //= require prototype
-//= require jquery-1.10.2.min
 //= require noconflict
 //= require ccard
 //= require validation
@@ -34,10 +37,6 @@
 //= require jquery.easydropdown.min
 //= require jquery.animateNumber
 //= require toastr
-//= require adminlte.min
-//= require demo
-//= require fastclick
-//= require jquery.slimscroll.min
-//= require_tree .
+//= require camera
 
 

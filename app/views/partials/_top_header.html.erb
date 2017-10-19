@@ -4,10 +4,10 @@
       <!-- Search -->
       <div class="header-search desktop">
         <div class="top-search"></div>
-        <form id="search_mini_form" action="https://livedemo00.template-help.com/magento_57714/catalogsearch/result/" method="get">
+        <form id="search_mini_form" action="javascript:void(0)" method="get">
           <div class="input-box">
             <div class="top-search"></div>
-            <label for="search">Search:</label>
+            <label for="search">Tìm kiếm:</label>
             <input
             id="search"
             type="search"
@@ -16,10 +16,10 @@
             name="q"
             value=""
             maxlength="128"
-            placeholder="Search entire store here..."/>
-            <button type="submit" title="Search" class="button search-button">
+            placeholder="Nhập tìm kiếm ..."/>
+            <button type="submit" title="Tìm kiếm" class="button search-button">
               <span>
-                <span>Search</span>
+                <span>Tìm kiếm</span>
               </span>
             </button>
           </div>
@@ -31,7 +31,7 @@
       <div class="header-minicart desktop">
         <a href="https://livedemo00.template-help.com/magento_57714/checkout/cart/" data-target-element="#header-cart" class="skip-link skip-cart  no-count">
           <span class="icon"></span>
-          <span class="label">Cart</span>
+          <span class="label">Gỉo hàng</span>
           <span class="count">0</span>
         </a>
         <div id="header-cart" class="block block-cart skip-content">
@@ -39,13 +39,13 @@
           <div id="minicart-success-message" class="minicart-message"></div>
           <div class="minicart-wrapper">
             <p class="block-subtitle">
-              Recently added item(s)<a class="close skip-link-close material-design-cancel19" href="#" title="Close"></a>
+              Sản phẩm được mua gần đây <a class="close skip-link-close material-design-cancel19" href="#" title="Close"></a>
             </p>
-            <p class="empty">You have no items in your shopping cart.</p>
+            <p class="empty">Bạn không có sản phẩm nào trong giỏ hàng.</p>
           </div>
         </div>
       </div>
-      <div class="header-switchers">
+    <!--   <div class="header-switchers">
         <div class="header-button currency-list full_mode">
           <div class="header-button-title">
             <span class="current">USD</span>
@@ -60,7 +60,7 @@
           </ul>
         </div>
         <div class="header-button lang-list full_mode">
-          <div class="header-button-title"><!--<span class="label">Your Language:</span>--> <span class="current">English</span></div>
+          <div class="header-button-title"><span class="current">English</span></div>
           <ul>
             <li>
               <a  class="selected" href="https://livedemo00.template-help.com/magento_57714/?___store=english&amp;___from_store=english" title="en_US"><span>English</span><span class="mobile-part">en</span></a>
@@ -76,7 +76,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <!-- Top Links -->
       <div class="top-links">
         <div id="" class="top-links-inline">
@@ -95,9 +95,12 @@
       <!-- end Top Links -->
       <!--<p class="welcome-msg">Welcome to our online store! </p>-->
       <!-- logo -->
-      <a class="logo" href="https://livedemo00.template-help.com/magento_57714/">
-        <img src="https://livedemo00.template-help.com/magento_57714/skin/frontend/tm_themes/theme761/images/logo.png" alt="Magento Commerce"/>
-      </a>
+      <h1 style="font-family: 'Aclonica';">
+        <a class="logo" href="https://livedemo00.template-help.com/magento_57714/" style="color: #2D8B47;  font-size: 25px; font-weight: normal; line-height: 48px; margin: 0 0 50px; text-align: center; background-color: #66bb6a; padding: 20px;"  >
+          <!-- <img src="https://livedemo00.template-help.com/magento_57714/skin/frontend/tm_themes/theme761/images/logo.png" alt="Trang Chủ"/> -->
+          THÁC NƯỚC <br/> PHONG THỦY
+        </a>
+      </h1>
       <!-- end logo -->
     </div>
   </div>
@@ -111,18 +114,17 @@
         <span class="icon"></span>
         <span class="label">Menu</span>
       </a>
-
       <!-- Search Label -->
       <a href="#header-search" class="skip-link skip-search">
         <span class="icon"></span>
-        <span class="label">Search</span>
+        <span class="label">Tìm kiếm</span>
       </a>
       <!-- Search content -->
       <div id="header-search" class="skip-content">
         <form id="search_mini_form" action="https://livedemo00.template-help.com/magento_57714/catalogsearch/result/" method="get">
           <div class="input-box">
             <div class="top-search"></div>
-            <label for="search">Search:</label>
+            <label for="search">Tìm kiếm:</label>
             <input
             id="search"
             type="search"
@@ -130,9 +132,9 @@
             class="input-text required-entry"
             name="q"
             value=""
-            maxlength="128"
-            placeholder="Search entire store here..."/>
-            <button type="submit" title="Search" class="button search-button">
+            maxlength="120"
+            placeholder="Nhập tìm kiếm ..."/>
+            <button type="submit" title="Tìm kiếm" class="button search-button" style="margin-right: 10px">
               <span>
                 <span>Search</span>
               </span>
@@ -143,83 +145,34 @@
           </div>
         </form>
       </div>
-
-      <!-- Account Label -->
-      <a href="https://livedemo00.template-help.com/magento_57714/customer/account/" data-target-element="#header-account" class="skip-link skip-account">
-        <span class="icon"></span>
-        <span class="label">Account</span>
-      </a>
-      <!-- Account content -->
-      <div id="header-account" class="skip-content">
-        <div class="header-button lang-list full_mode">
-          <div class="header-button-title"><span class="current">English</span></div>
-          <ul>
-            <li>
-              <a  class="selected" href="https://livedemo00.template-help.com/magento_57714/?___store=english&amp;___from_store=english" title="en_US"><span>English</span><span class="mobile-part">en</span></a>
-            </li>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/?___store=german&amp;___from_store=english" title="de_DE"><span>German</span><span class="mobile-part">de</span></a>
-            </li>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/?___store=spanish&amp;___from_store=english" title="es_ES"><span>Spanish</span><span class="mobile-part">es</span></a>
-            </li>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/?___store=russian&amp;___from_store=english" title="ru_RU"><span>Russian</span><span class="mobile-part">ru</span></a>
-            </li>
-          </ul>
-        </div>
-        <div class="header-button currency-list full_mode">
-          <div class="header-button-title">
-            <span class="current">USD</span>
-          </div>
-          <ul>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/directory/currency/switch/currency/EUR/uenc/aHR0cDovL2xpdmVkZW1vMDAudGVtcGxhdGUtaGVscC5jb20vbWFnZW50b181NzcxNC8,/" title="EUR"><span>€ Euro</span><span class="mobile-part">EUR</span></a>
-            </li>
-            <li>
-              <a  class="selected" href="https://livedemo00.template-help.com/magento_57714/directory/currency/switch/currency/USD/uenc/aHR0cDovL2xpdmVkZW1vMDAudGVtcGxhdGUtaGVscC5jb20vbWFnZW50b181NzcxNC8,/" title="USD"><span>$ US Dollar</span><span class="mobile-part">USD</span></a>
-            </li>
-          </ul>
-        </div>
-
-
-        <div class="links">
-          <ul>
-            <li class="first" ><a href="https://livedemo00.template-help.com/magento_57714/customer/account/" title="My Account" class="my-account-link">My Account</a></li>
-            <li ><a href="https://livedemo00.template-help.com/magento_57714/wishlist/" title="My Wishlist" class="wishlist-link">My Wishlist</a></li>
-            <li ><a href="https://livedemo00.template-help.com/magento_57714/checkout/cart/" title="My Cart" class="top-link-cart">My Cart</a></li>
-            <li ><a href="https://livedemo00.template-help.com/magento_57714/checkout/" title="Checkout" class="top-link-checkout">Checkout</a></li>
-            <li ><a href="https://livedemo00.template-help.com/magento_57714/customer/account/create/" title="Register" class="register-link">Register</a></li>
-            <li class=" last" ><a href="https://livedemo00.template-help.com/magento_57714/customer/account/login/" title="Log In" class="log-in-link">Log In</a></li>
-          </ul>
-        </div>
-      </div>
-
       <!-- Cart -->
       <div class="header-minicart mobile">
-
-
         <a href="https://livedemo00.template-help.com/magento_57714/checkout/cart/" data-target-element="#header-cart-mobile" class="skip-link skip-cart  no-count">
           <span class="icon"></span>
           <span class="label">Cart</span>
           <span class="count">0</span>
         </a>
-
         <div id="header-cart-mobile" class="block block-cart skip-content">
-
           <div id="minicart-error-message" class="minicart-message"></div>
           <div id="minicart-success-message" class="minicart-message"></div>
-
           <div class="minicart-wrapper">
-
             <p class="block-subtitle">
-              Recently added item(s)        <a class="close skip-link-close material-design-cancel19" href="#" title="Close"></a>
+              Recently added item(s)<a class="close skip-link-close material-design-cancel19" href="#" title="Close"></a>
             </p>
-
             <p class="empty">You have no items in your shopping cart.</p>
-
           </div>
         </div>
+      </div>
+      <div class="header-minicart mobile">
+        <h5>
+          <p>
+            <a href="#" title="Hotline" class="skip-link skip-cart no-count"
+            style="width: 40%; display: inline-block; margin-top: 2% " >
+              <sup><i class="fa fa-phone" aria-hidden="true" style="font-size: 20px"></i></sup>
+              012344559609
+            </a>
+          </p>
+        </h5>
       </div>
     </div>
   </div>
