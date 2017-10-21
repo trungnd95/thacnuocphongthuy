@@ -21,6 +21,7 @@
 .table-bordered thead>tr>th,.table-bordered thead>tr>td {
   font-size:16px;line-height:1.667em;color:#333;text-transform:uppercase;font-weight:500
 }
+
 @media only screen and (max-width: 500px){
   .theme-block {
     padding:15px;margin-bottom:30px
