@@ -10,7 +10,52 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require account-reviews
+ *= require aw_blog
+ *= require camera
+ *= require bootstrap
+ *= require catalog-compare
+ *= require catalog-msrp
+ *= require catalog-product
+ *= require catalogsale
+ *= require checkout-cart-minicart
+ *= require checkout-cart
+ *= require checkout-multi-address
+ *= require checkout-onepage
+ *= require cms
+ *= require configurableswatches
+ *= require contacts
+ *= require customer
+ *= require easydropdown
+ *= require fl-outicons
+ *= require font-awesome
+ *= require footer
+ *= require global
+ *= require header-account
+ *= require header-cart
+ *= require header-nav
+ *= require header-search
+ *= require header
+ *= require lightslider
+ *= require livesearch
+ *= require material-design
+ *= require owl.carousel
+ *= require megamenu
+ *= require newsletterpopup
+ *= require owl.theme
+ *= require pricing_conditions
+ *= require product-list
+ *= require review
+ *= requrie search
+ *= require sidebar
+ *= require style
+ *= require styles
+ *= requrie superfish
+ *= require tags
+ *= require tm_googlemap
+ *= require wishlist
+ *= require lightslider
+ *= require custom
  *= require_self
  *= require toastr
  */

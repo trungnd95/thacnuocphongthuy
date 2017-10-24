@@ -25,4 +25,30 @@ module Admin::CategoriesHelper
     content << "</li>"
     content.html_safe
   end
+
+  # def homepages_cat_recursive cat
+  #   content = [];
+  #   content << "<div class='header-button lang-list full_mode'>"
+  #   content << "<div class='header-button-title'><span class='current'>#{cat.name}</span></div>"
+  #   content << "<ul>"
+  #   content <<
+  # end
 end
+
+# <div class="header-button lang-list full_mode">
+#                 <div class="header-button-title"><span class="current">TINH DAU</span></div>
+#                 <ul>
+#                   <li>
+#                     <a  class="selected" href="https://livedemo00.template-help.com/magento_57714/?___store=english&amp;___from_store=english" title="en_US"><span>English</span><span class="mobile-part">en</span></a>
+#                   </li>
+#                   <li>
+#                     <a  href="https://livedemo00.template-help.com/magento_57714/?___store=german&amp;___from_store=english" title="de_DE"><span>German</span><span class="mobile-part">de</span></a>
+#                   </li>
+#                   <li>
+#                     <a  href="https://livedemo00.template-help.com/magento_57714/?___store=spanish&amp;___from_store=english" title="es_ES"><span>Spanish</span><span class="mobile-part">es</span></a>
+#                   </li>
+#                   <li>
+#                     <a  href="https://livedemo00.template-help.com/magento_57714/?___store=russian&amp;___from_store=english" title="ru_RU"><span>Russian</span><span class="mobile-part">ru</span></a>
+#                   </li>
+#                 </ul>
+#               </div>

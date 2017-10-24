@@ -38,5 +38,7 @@
 //= require jquery.animateNumber
 //= require toastr
 //= require camera
-
+//= require lightslider
+//= require slider_waterfall
+//= require custom
 
