@@ -21,6 +21,9 @@
                 <% end %>
             <% end %>
             <li  class="level0 nav-2">
+              <a href="#blogSection" id="blog" class="level0 current-single">Bài Viết</a>
+            </li>
+            <li  class="level0 nav-2">
               <a href="#feedbackSection" id="feedback" class="level0 current-single">Phản hồi</a>
             </li>
             <li  class="level0 nav-3">
@@ -34,7 +37,7 @@
       </div>
 
       <div class="nav-container">
-        <div class="nav" style="padding-left: 30%">
+        <div class="nav" style="padding-left: 24%">
           <div class="header-switchers">
             <% @categories.each do |cat| %>
               <% if cat.parent.blank? %>
@@ -56,6 +59,11 @@
             <% end %>
             <div class="header-button full_mode" >
               <div class="header-button-title">
+                <span class="current current-single" id="blog" href="#blogSection">Bài Viết</span>
+              </div>
+            </div>
+            <div class="header-button full_mode" >
+              <div class="header-button-title">
                 <span class="current current-single" id="feedback" href="#feedbackSection">Phản hồi</span>
               </div>
             </div>
@@ -70,37 +78,3 @@
     </div>
   </div>
 </div>
-
-
-<!--   <div class="header-switchers">
-        <div class="header-button currency-list full_mode">
-          <div class="header-button-title">
-            <span class="current">USD</span>
-          </div>
-          <ul>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/directory/currency/switch/currency/EUR/uenc/aHR0cDovL2xpdmVkZW1vMDAudGVtcGxhdGUtaGVscC5jb20vbWFnZW50b181NzcxNC8,/" title="EUR"><span>€ Euro</span><span class="mobile-part">EUR</span></a>
-            </li>
-            <li>
-              <a  class="selected" href="https://livedemo00.template-help.com/magento_57714/directory/currency/switch/currency/USD/uenc/aHR0cDovL2xpdmVkZW1vMDAudGVtcGxhdGUtaGVscC5jb20vbWFnZW50b181NzcxNC8,/" title="USD"><span>$ US Dollar</span><span class="mobile-part">USD</span></a>
-            </li>
-          </ul>
-        </div>
-        <div class="header-button lang-list full_mode">
-          <div class="header-button-title"><span class="current">English</span></div>
-          <ul>
-            <li>
-              <a  class="selected" href="https://livedemo00.template-help.com/magento_57714/?___store=english&amp;___from_store=english" title="en_US"><span>English</span><span class="mobile-part">en</span></a>
-            </li>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/?___store=german&amp;___from_store=english" title="de_DE"><span>German</span><span class="mobile-part">de</span></a>
-            </li>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/?___store=spanish&amp;___from_store=english" title="es_ES"><span>Spanish</span><span class="mobile-part">es</span></a>
-            </li>
-            <li>
-              <a  href="https://livedemo00.template-help.com/magento_57714/?___store=russian&amp;___from_store=english" title="ru_RU"><span>Russian</span><span class="mobile-part">ru</span></a>
-            </li>
-          </ul>
-        </div>
-      </div> -->

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :images, only: [:destroy]
   end
   root 'home_pages#index'
+  resources :categories, only: :show
 end

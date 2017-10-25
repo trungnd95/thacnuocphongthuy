@@ -1,5 +1,5 @@
 class HomePagesController < ApplicationController
+  before_action :load_categories
   def index
-    @categories =  Category.includes([:parent, :subcategories]).order(created_at: :desc).all
   end
 end

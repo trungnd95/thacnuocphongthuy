@@ -3,9 +3,33 @@
   <head>
     <%= render "partials/head" %>
   </head>
-  <body class="cms-index-index front <%= current_page?(root_url) ? 'cms-home' : '' %>">
+  <body class="cms-index-index front <%= current_page?(root_url) ? 'cms-home' : 'cms_branch_page' %>">
     <div class="wrapper">
       <div class="page">
+        <header id="header" class="page-header">
+          <%= render "partials/top_header" %>
+          <%= render "partials/main_menu" %>
+          <% if current_page?(root_url) %>
+            <script>
+            jQuery(function(){
+              jQuery('#camera_wrap').camera({
+                alignmen: 'topCenter',
+                height: '51.28%',
+                minHeight: '200px',
+                loader : false,
+                navigation: true,
+                fx: 'simpleFade',
+                navigationHover:false,
+                thumbnails: false,
+                playPause: false,
+                thumbnails: true,
+                pagination:true
+              });
+            });
+            </script>
+            <%= render "partials/slider" %>
+          <% end %>
+        </header>
         <%= yield %>
         <%= render "partials/footer" %>
       </div>

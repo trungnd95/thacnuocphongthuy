@@ -152,14 +152,14 @@
     display:block;height:30px
   }
 .header-switchers .header-button.full_mode .header-button-title .current{
-  font-size: 20px;
-    display: block;
-    position: relative;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    padding: 0px;
+  font-size: 17px;
+  display: block;
+  position: relative;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 0px;
 }
   .header-switchers .header-button>a:after{
     display:inline-block;font-family:"material-design";text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transform:translate(0,0);content:"";font-size:28px;line-height:18px;padding-left:5px;vertical-align:middle

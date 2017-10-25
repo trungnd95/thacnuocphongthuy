@@ -1,10 +1,11 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin"
   before_action :check_if_admin!
+  before_action :load_categories
   before_action :set_category, except: [:index, :new]
 
   def index
-    @categories = Category.includes([:parent, :subcategories]).order(created_at: :desc).all
+    # @categories = Category.includes([:parent, :subcategories]).order(created_at: :desc).all
   end
 
   def new
