@@ -5,6 +5,15 @@ class Category < ApplicationRecord
   has_many :items
 
   validates :name, presence: true, uniqueness: true
+
+  def self.find_root_parent cat
+    unless cat.parent.blank?
+      cat.parent
+      unless cat.parent.parent.blank?
+        find_root_parent cat.parent
+      end
+    end
+  end
 end
 
 

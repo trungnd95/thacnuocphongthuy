@@ -1,0 +1,13 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <ul>
+      <li class="home">
+        <a href="<%= root_url %>" title="Trở về trang chủ">Trang chủ</a>
+        <span class="fa fa-angle-right"></span>
+      </li>
+      <% crum = [] %>
+      <% crumb(crum, category) %>
+      <%= crum.join.html_safe %>
+    </ul>
+  </div>
+</div>
