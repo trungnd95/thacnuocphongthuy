@@ -12,3 +12,16 @@
 .category-title h2 {
   font-size: 23px !important;
 }
+
+.filter-content {
+  background: #d2d6de !important;
+  padding: 15px;
+}
+
+.slider {
+  display: inline-block !important;
+}
+
+.slider-bar {
+  margin-right: -10%;
+}

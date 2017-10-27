@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :images, only: [:destroy]
   end
   root 'home_pages#index'
-  resources :categories, only: :show
+  resources :categories, only: :show do
+    member do
+      get 'filter'
+    end
+  end
 end

@@ -4,10 +4,12 @@
 //= require turbolinks
 //= require turbolinks-compatibility
 //= require bootstrap.min
+//= require bootstrap-slider
+//= require custom
+//= require slider_waterfall
 //= require prototype
 //= require noconflict
 //= require ccard
-//= require validation
 //= require builder
 //= require effects
 //= require dragdrop
@@ -15,7 +17,6 @@
 //= require slider
 //= require js
 //= require form
-//= require translate
 //= require cookies
 //= require modernizr.custom.min
 //= require selectivizr
@@ -32,13 +33,10 @@
 //= require ajaxlogin
 //= require tm-stick-up
 //= require owl.carousel.min
-//= require bootstrap.min
 //= require front
 //= require jquery.easydropdown.min
 //= require jquery.animateNumber
 //= require toastr
 //= require camera
 //= require lightslider
-//= require slider_waterfall
-//= require custom
 
