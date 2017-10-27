@@ -1,3 +1,14 @@
 .current-single:after {
   content: "" !important;
 }
+
+.category-title {
+  position: relative;
+  padding: 0 0 10px;
+  margin-bottom: 40px;
+  border-bottom: solid 2px #dfdfdf;
+}
+
+.category-title h2 {
+  font-size: 23px !important;
+}
