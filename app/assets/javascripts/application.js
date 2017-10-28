@@ -15,6 +15,7 @@
 //= require dragdrop
 //= require controls
 //= require slider
+//= require validation
 //= require js
 //= require form
 //= require cookies

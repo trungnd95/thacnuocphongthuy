@@ -15,7 +15,7 @@
 
 .filter-content {
   background: #d2d6de !important;
-  padding: 15px;
+  padding: 15px 2px;
 }
 
 .slider {
@@ -23,5 +23,5 @@
 }
 
 .slider-bar {
-  margin-right: -10%;
+  margin-right: -5%;
 }
