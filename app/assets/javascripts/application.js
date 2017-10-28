@@ -40,4 +40,5 @@
 //= require toastr
 //= require camera
 //= require lightslider
-
+//= require jquery.bxslider.min
+//= require jquery.elevateZoom-3.0.8.min

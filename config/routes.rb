@@ -16,4 +16,5 @@ Rails.application.routes.draw do
       get 'filter'
     end
   end
+  resources :items, only: :show
 end
