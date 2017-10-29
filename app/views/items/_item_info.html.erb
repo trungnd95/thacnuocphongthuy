@@ -1,0 +1,45 @@
+<div class="product-shop">
+  <div class="additional-info">
+    <div class="product-sku">Product Code:<span class="sku-number">5435</span></div>
+    <p class="availability-only">
+      <span title="Only 4234 left">Only <strong>4234</strong> left</span>
+    </p>
+    <p class="availability in-stock" itemprop="availability">
+      <span class="label">Availability:</span>
+      <span class="value">In stock</span>
+    </p>
+    <div class="clear"></div>
+  </div>
+  <div class="product-name secondary" itemprop="name">
+    <span class="h1">CF Aspire Sub Ohm Battery</span>
+  </div>
+  <div class="extra-info">
+    <%= render "item_rating" %>
+  </div>
+  <div class="price-info" itemprop="price">
+    <div class="price-box">
+      <span class="regular-price" id="product-price-1">
+        <span class="price">$21.00</span>
+      </span>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="product-options-bottom" style="margin-top: 10px; border-top: 2px solid #B6B1C2; padding-top: 20px">
+    <div class="price-box">
+      <span class="regular-price" id="product-price-1_clone">
+        <span class="price">$21.00</span>
+      </span>
+    </div>
+    <div class="add-to-cart">
+      <div class="qty-wrapper">
+        <label for="qty">Qty:</label>
+        <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
+      </div>
+      <div class="add-to-cart-buttons">
+        <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="add-to-cart-wrapper"></div>
+<div class="clear"></div>

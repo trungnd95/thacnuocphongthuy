@@ -1,0 +1,43 @@
+<div class="ratings">
+  <div class="rating-box stars">
+    <i class="review-icon"></i>
+    <i class="review-icon"></i>
+    <i class="review-icon"></i>
+    <i class="review-icon"></i>
+    <i class="review-icon"></i>
+    <div class="rating" style="width:80%">
+      <div class="mask">
+        <i class="review-icon"></i>
+        <i class="review-icon"></i>
+        <i class="review-icon"></i>
+        <i class="review-icon"></i>
+        <i class="review-icon"></i>
+      </div>
+    </div>
+  </div>
+  <span class="separator temp">|</span>
+  <p class="rating-links">
+    <a href="https://livedemo00.template-help.com/magento_57714/cf-aspire-sub-ohm-battery.html#customer-reviews" class="moveToTab" onclick="">1 Review(s)</a>
+    <span class="separator">|</span>
+    <a href="https://livedemo00.template-help.com/magento_57714/review/product/list/id/1/category/7/#review-form">Add Your Review</a>
+  </p>
+</div>
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery('a.moveToTab').click(function(e){
+      moveToTab();
+    })
+  });
+  function moveToTab(){
+    jQuery('dt, dd', '#collateral-tabs').each(function(){
+      jQuery(this).removeClass('current');
+    });
+    jQuery('.product-collateral .toggle-tabs li').each(function(){
+      jQuery(this).removeClass('current');
+      jQuery('#reviews', this).parents('li').click();
+    })
+    jQuery('html, body').animate({
+      scrollTop: jQuery('.product-collateral').offset().top - 80}, 'slow'
+      );
+  }
+</script>

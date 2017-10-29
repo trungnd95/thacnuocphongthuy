@@ -25,3 +25,18 @@
 .slider-bar {
   margin-right: -5%;
 }
+@media all and (min-width: 500px) {
+  .price-box {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    /* background: yellow; */
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
