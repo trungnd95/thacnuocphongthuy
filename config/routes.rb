@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :items
     resources :images, only: [:destroy]
+    resources :sys_infos, only: [:index, :edit, :update]
   end
   root 'home_pages#index'
   resources :categories, only: :show do
