@@ -39,4 +39,11 @@
   }
 }
 
+.sys-foot-home > li > h6, .sys-foot-home > li > p {
+  display: inline-block;
+}
 
+.sys-foot-home > li > h6 {
+  color: #fff;
+  margin-right: 5px;
+}

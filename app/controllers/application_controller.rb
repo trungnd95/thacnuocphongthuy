@@ -14,4 +14,7 @@ class ApplicationController < ActionController::Base
   def load_categories
     @categories =  Category.includes([:parent, :subcategories]).where(parent_id: nil).order(created_at: :asc)
   end
+  def load_sys_info
+    @sys_info = SysInfo.first
+  end
 end

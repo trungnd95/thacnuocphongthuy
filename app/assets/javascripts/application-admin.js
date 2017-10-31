@@ -16,4 +16,5 @@
 //= require jquery.dataTables.min
 //= require dataTables.bootstrap.min
 //= require admin/items
+//= require admin/sysinfo
 

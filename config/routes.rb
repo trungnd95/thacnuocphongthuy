@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
   resources :items, only: :show
   resources :carts, only: :index
+  resources :feedbacks, only: [:index, :create, :update]
 end
