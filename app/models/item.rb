@@ -20,4 +20,5 @@ class Item < ApplicationRecord
       img.update thumbnail: (img.url.file.original_filename == thumb_val) ? true : false
     end
   end
+
 end

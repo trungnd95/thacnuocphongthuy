@@ -14,6 +14,14 @@ class Category < ApplicationRecord
       end
     end
   end
+
+  def parent_get_items
+    products = []
+    self.subcategories.each do |sub|
+      products << sub.items.to_a  # Change to products += get_products(sub)
+    end
+    products.flatten!
+  end
 end
 
 
