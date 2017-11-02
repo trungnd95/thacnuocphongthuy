@@ -37,7 +37,7 @@
       </div>
 
       <div class="nav-container">
-        <div class="nav" style="padding-left: 24%">
+        <div class="nav">
           <div class="header-switchers">
             <% @categories.each do |cat| %>
               <% if cat.parent.blank? %>
@@ -47,7 +47,7 @@
                   <ul>
                     <% cat.subcategories.each do |sub| %>
                     <li>
-                      <a  class="selected" href="javascript:void(0)" title="<%= sub.name%>">
+                      <a  class="" href="javascript:void(0)" title="<%= sub.name%>" style="color: #388e3c">
                         <span><%= sub.name %></span><span class="mobile-part">en</span>
                       </a>
                     </li>

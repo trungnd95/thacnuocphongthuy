@@ -47,3 +47,15 @@
   color: #fff;
   margin-right: 5px;
 }
+
+@media all and (min-width: 1200px) {
+  .nav {
+    padding-left: 50% !important ;
+  }
+}
+
+@media all and (max-width: 1199px) {
+  .nav {
+    padding-left: 24% !important ;
+  }
+}
