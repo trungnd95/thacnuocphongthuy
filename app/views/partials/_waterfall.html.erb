@@ -8,7 +8,7 @@
           <% unless cat.parent_get_items.nil? %>
             <% cat.parent_get_items.each do |item| %>
               <li class="swiper-slide" itemscope>
-                <a class="product-image" href="<%= item_path(item) %>" title="<%= item.name %>" itemprop="url">
+                <a class="product-image" href="<%= item_path(item) %>" title="<%= item.name %>" itemprop="url" style="margin-bottom:10px"">
                   <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" width="300" height="228" alt="" itemprop="image" />
                 </a>
                 <div class="product-details">
