@@ -9,7 +9,7 @@
             <% cat.parent_get_items.each do |item| %>
               <li class="swiper-slide" itemscope>
                 <a class="product-image" href="<%= item_path(item) %>" title="<%= item.name %>" itemprop="url">
-                  <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" width="228" height="228" alt="" itemprop="image" />
+                  <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" width="300" height="228" alt="" itemprop="image" />
                 </a>
                 <div class="product-details">
                   <div class="p-left">
@@ -23,7 +23,7 @@
                         <p class="old-price">
                           <span class="price-label">Regular Price:</span>
                           <span class="price" id="old-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
-                          <%= item.price %> </span>
+                          <%= item.price %> VND </span>
                         </p>
                       <% end %>
 
@@ -31,9 +31,9 @@
                         <span class="price-label">Special Price</span>
                         <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
                         <% if item.promo.nil? %>
-                          <%= item.price %>
+                          <%= item.price %> VND
                         <% else %>
-                          <%= item.price*item.promo/100 %>
+                          <%= item.price*item.promo/100 %> VND
                         <% end %>
                         </span>
                       </p>
