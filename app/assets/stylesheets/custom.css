@@ -59,3 +59,7 @@
     padding-left: 24% !important ;
   }
 }
+
+a.sub_main_menu:hover {
+  color: #fff !important;
+}

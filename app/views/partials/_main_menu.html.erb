@@ -12,7 +12,7 @@
                     <ul class="level0">
                       <% cat.subcategories.each do |sub| %>
                         <li  class="level1 nav-1-1 first">
-                          <a href="javascript:void(0)" class="level1 "><%= sub.name %></a>
+                          <a href="javascript:void(0)" class="level1 sub_main_menu "><%= sub.name %></a>
                         </li>
                       <% end %>
                     </ul>
@@ -47,7 +47,7 @@
                   <ul>
                     <% cat.subcategories.each do |sub| %>
                     <li>
-                      <a  class="" href="javascript:void(0)" title="<%= sub.name%>" style="color: #388e3c">
+                      <a  class="sub_main_menu" href="javascript:void(0)" title="<%= sub.name%>" style="color: #388e3c">
                         <span><%= sub.name %></span><span class="mobile-part">en</span>
                       </a>
                     </li>
