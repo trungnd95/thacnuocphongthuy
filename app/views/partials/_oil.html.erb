@@ -1,16 +1,22 @@
  <div class="widget widget-new-products sidebar" style="margin-top: 9%">
   <div class="widget-title center">
     <h1><%= @categories.last.name %></h1>
+    <div class="pull-right" style="margin-top: -10px">
+      <a href="<%= category_path(@categories.last) %>">
+        Xem Tất Cả
+        <i class="fa fa-plane" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
   <div class="widget-products">
     <ul class="products-grid row oil-slider" id='oil-slider'>
-      <% unless @categories.last.parent_get_items.nil? %>
-        <% @categories.last.parent_get_items.each do |item| %>
+      <% unless @categories.last.get_items.flatten.nil? %>
+        <% @categories.last.get_items.flatten.each do |item| %>
           <li class="item  first col-xs-12 col-sm-4" itemscope>
             <div class="wrapper-hover">
               <div class="product-image-container">
                 <a href="" title="<%= item.name %>" class="product-image" itemprop="url">
-                  <img id="product-collection-image-2" src="<%= Image.image_thumb(item.id).first.url.url %>" alt="<%= item.name %>" width="228" height="228" itemprop="image" />
+                  <img id="product-collection-image-2" src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" alt="<%= item.name %>" width="228" height="228" itemprop="image" />
                 </a>
               </div>
               <div class="product-details">

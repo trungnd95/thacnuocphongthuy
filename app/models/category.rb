@@ -15,13 +15,17 @@ class Category < ApplicationRecord
     end
   end
 
-  def parent_get_items
-    products = []
-    self.subcategories.each do |sub|
-      products << sub.items.to_a  # Change to products += get_products(sub)
+  def get_items tmp_items=[]
+    if self.subcategories.size > 0
+      self.subcategories.each do |sub|
+        tmp_items << sub.get_items(tmp_items)
+      end
+    else
+      tmp_items << self.items.to_a
     end
-    products.flatten!
+    tmp_items.reject(&:empty?).flatten.uniq.take(5)
   end
 end
+
 
 

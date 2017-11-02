@@ -4,6 +4,10 @@ Quản lý Sản phẩm
 <div class="box-header with-border">
   <h3 class="box-title">Danh sách sản phẩm</h3>
 </div>
+<%= link_to new_admin_item_path, class: "btn btn-primary", style: "margin: 10px 20px" do %>
+  <i class="fa fa-plus" aria-hidden="true"></i>
+  Thêm mới
+<% end %>
 <div class="row" style="margin-top: 20px;padding: 0px 10px">
   <div class="col-sm-12">
     <table id="list_items" class="table table-bordered table-hover">

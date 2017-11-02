@@ -20,17 +20,21 @@ class Admin::ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         unless params[:images].nil?
-          unless params[:images][:url].nil? && params[:images][:thumbnail].nil?
-            params[:images]['url'].each do |a|
-              @item.images.create!(url: a,
-                    thumbnail: (a.original_filename == params[:images]['thumbnail']) ? '1' : '0')
+          unless params[:images][:url].nil?
+            unless params[:images][:thumbnail].nil?
+              params[:images]['url'].each do |a|
+                @item.images.create!(url: a,
+                      thumbnail: (a.original_filename == params[:images]['thumbnail']) ? '1' : '0')
+              end
+            else
+              flash[:warning] = "Chưa lưu ảnh, do bạn chưa chọn ảnh làm hình đại diện cho sản phẩm. Vào chỉnh sửa sản phẩm để thêm lại ảnh và chọn thumbnail!!!"
             end
-          else
-            flash[:warning] = "Chưa lưu ảnh, do bạn chưa chọn ảnh làm hình đại diện cho sản phẩm. \nVào chỉnh sửa sản phẩm để thêm lại ảnh và chọn thumbnail!!!"
           end
         end
         format.html do
-          flash[:success] = "Tạo sản phẩm thành công !!!"
+          if flash[:warning].nil?
+            flash[:success] = "Tạo sản phẩm thành công !!!"
+          end
           redirect_to admin_items_path
         end
         format.json do

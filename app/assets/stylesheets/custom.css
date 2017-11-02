@@ -48,13 +48,13 @@
   margin-right: 5px;
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1401px) {
   .nav {
     padding-left: 50% !important ;
   }
 }
 
-@media all and (max-width: 1199px) {
+@media all and (max-width: 1400px) {
   .nav {
     padding-left: 24% !important ;
   }

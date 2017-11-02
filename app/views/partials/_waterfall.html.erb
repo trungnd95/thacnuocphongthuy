@@ -3,10 +3,16 @@
       <div class="widget-catalogsale-products-carousel sidebar" id="dd73e02cfd0daca86f7ebcee23400f19" >
         <div class="widget-title center">
           <h1><%= cat.name %></h1>
+          <div class="pull-right" style="margin-top: -10px">
+            <a href="<%= category_path(cat) %>">
+              Xem Tất Cả
+              <i class="fa fa-plane" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
         <ul class="content-slider" id="content-slider">
-          <% unless cat.parent_get_items.nil? %>
-            <% cat.parent_get_items.each do |item| %>
+          <% unless cat.get_items.flatten.nil? %>
+            <% cat.get_items.flatten.each do |item| %>
               <li class="swiper-slide" itemscope>
                 <a class="product-image" href="<%= item_path(item) %>" title="<%= item.name %>" itemprop="url" style="margin-bottom:10px"">
                   <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" width="300" height="228" alt="" itemprop="image" />
