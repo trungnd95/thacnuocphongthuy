@@ -6,11 +6,11 @@ class Item < ApplicationRecord
   has_many :orders, through: :ordered_items
   accepts_nested_attributes_for :images
 
-  scope :items_filter, ->(cat_id, price_range){
+  scope :items_filter, ->(cat_id, start_range, end_range){
     unless cat_id.blank?
-      where("category_id = ? AND price IN (?)", cat_id, price_range)
+      where("category_id = ? AND price > ? AND price < ?", cat_id, start_range, end_range)
     else
-      where("price IN (?)", price_range)
+      where("price > ? AND price < ?", start_range, end_range)
     end
   }
   validates :category_id, presence: true

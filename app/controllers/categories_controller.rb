@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def filter
-    @items = Item.items_filter(params[:cat_id], params[:price_range].split(','))
+    @items = Item.items_filter(params[:cat_id], price_range(params[:price_range]).first, price_range(params[:price_range]).last)
   end
 
   private
@@ -19,5 +19,9 @@ class CategoriesController < ApplicationController
   def load_categories_filter
     @categories_ =  Category.includes(:subcategories).all
       .collect{|cat| cat if cat.subcategories.count == 0}.compact!
+  end
+
+  def price_range val
+    val.split(',').map{|t| t.to_i * 22600}
   end
 end

@@ -3,7 +3,7 @@ module BreadCrumbsHelper
     curmb = ''
     curmb << "<li class='category7'>"
     if crum.size > 0
-      curmb << "<a href='#'>"
+      curmb << "<a href='/categories/#{category.id}'>"
     end
     curmb << "<strong>#{category.name}</strong>"
     if crum.size > 0

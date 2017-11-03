@@ -81,3 +81,9 @@ a.sub_main_menu:hover {
     padding-left: 13% !important;
   }
 }
+
+@media all and (max-width: 500px) {
+  .sys-foot-home > li > h6 {
+    color: #333;
+  }
+}

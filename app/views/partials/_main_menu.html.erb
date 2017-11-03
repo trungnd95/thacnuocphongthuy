@@ -48,7 +48,7 @@
                     <% cat.subcategories.each do |sub| %>
                     <li>
                       <a  class="sub_main_menu" href="<%= category_path(sub) %>" title="<%= sub.name%>" style="color: #388e3c">
-                        <span><%= sub.name %></span>
+                        <span style="text-transform: capitalize;"><%= sub.name %></span>
                       </a>
                     </li>
                     <% end %>
