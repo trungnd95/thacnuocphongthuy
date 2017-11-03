@@ -64,7 +64,7 @@ a.sub_main_menu:hover {
   color: #fff !important;
 }
 
-@media (min-width: 678px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .header-switchers .header-button.full_mode .header-button-title .current {
     font-size: 15px;
   }
@@ -73,7 +73,7 @@ a.sub_main_menu:hover {
   }
 }
 
-@media (min-width: 501px) and (max-width: 677px) {
+@media (min-width: 501px) and (max-width: 767px) {
   .header-switchers .header-button.full_mode .header-button-title .current {
     font-size: 13px;
   }

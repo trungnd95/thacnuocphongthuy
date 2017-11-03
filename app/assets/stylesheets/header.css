@@ -248,3 +248,21 @@
     display: block !important;
   }
  }
+
+@media only screen and (max-width: 767px){
+    .header-row-background{
+        display:block
+    }
+    .header-row-background .welcome-msg{
+      float:none;text-align:center;margin:0
+   }
+   .camera_caption {
+    margin-top: 40px;
+   }
+   .camera_caption h1 {
+    font-size: 20px;
+   }
+   .camera_caption h2 {
+    font-size: 16px;
+   }
+ }
