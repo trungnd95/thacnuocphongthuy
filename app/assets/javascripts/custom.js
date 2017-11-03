@@ -8,7 +8,7 @@ jQuery( document ).ready(function( $ ) {
     }, 1500);
   });
   /* BOOTSTRAP SLIDER */
-  $("#ex2").slider();
+  $("#price_range").slider();
 
   /*Tab */
   // jQuery(document).ready(function(){

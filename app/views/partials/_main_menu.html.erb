@@ -7,12 +7,12 @@
             <% @categories.each do |cat| %>
               <% if cat.parent.blank? %>
                 <li  class="level0 nav-1 first parent">
-                  <a href="javascript:void(0)"><%= cat.name %></a>
+                  <a href="<%= category_path(cat) %>"><%= cat.name %></a>
                   <% if cat.subcategories.count > 0 %>
                     <ul class="level0">
                       <% cat.subcategories.each do |sub| %>
                         <li  class="level1 nav-1-1 first">
-                          <a href="javascript:void(0)" class="level1 sub_main_menu "><%= sub.name %></a>
+                          <a href="<%= category_path(sub) %>" class="level1 sub_main_menu "><%= sub.name %></a>
                         </li>
                       <% end %>
                     </ul>
@@ -47,8 +47,8 @@
                   <ul>
                     <% cat.subcategories.each do |sub| %>
                     <li>
-                      <a  class="sub_main_menu" href="javascript:void(0)" title="<%= sub.name%>" style="color: #388e3c">
-                        <span><%= sub.name %></span><span class="mobile-part">en</span>
+                      <a  class="sub_main_menu" href="<%= category_path(sub) %>" title="<%= sub.name%>" style="color: #388e3c">
+                        <span><%= sub.name %></span>
                       </a>
                     </li>
                     <% end %>

@@ -6,9 +6,14 @@ class CategoriesController < ApplicationController
   def show
   end
 
+  def filter
+    @items = Item.items_filter(params[:cat_id], params[:price_range].split(','))
+  end
+
   private
   def load_cat
     @category = Category.find_by_id params[:id]
+    @items =  @category.get_items
   end
 
   def load_categories_filter

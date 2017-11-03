@@ -1,17 +1,22 @@
-<li class="item first col-xs-12 col-sm-4" itemscope="" itemtype="https://schema.org/product">
+<li class="item first col-xs-12 col-sm-4" itemscope="">
   <div class="wrapper-hover">
     <div class="product-image-container">
-      <a href="#" title="CF Aspire Sub Ohm Battery" class="product-image" itemprop="url">
-        <img id="product-collection-image-1" src="https://livedemo00.template-help.com/magento_57714/media/catalog/product/cache/1/small_image/210x210/9df78eab33525d08d6e5fb8d27136e95/c/f/cf-aspire-sub-ohm-battery_04.png" alt="CF Aspire Sub Ohm Battery" width="210" height="210" itemprop="image">
+      <a href="<%= item_path(item) %>" title="<%= item.name %>" class="product-image" itemprop="url" style="width: 240px; height: 240px; margin: 0px auto 13px;">
+        <img id="product-collection-image-1" src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" alt="<%= item.name %>" width="280px" height="280px" itemprop="image" style="width: 240px; height: 240px">
       </a>
     </div>
     <div class="product-details">
       <h2 class="product-name" itemprop="name">
-        <a href="#" title="CF Aspire Sub Ohm Battery">CF Aspire Sub Ohm Battery</a>
+        <a href="#" title="<%= item.name %>"><%= item.name %></a>
       </h2>
       <div class="price-box">
         <span class="regular-price" id="product-price-1">
-          <span class="price">€14.84</span>
+          <% if item.promo.nil? %>
+            <span class="price">VND <%= item.price %></span>
+          <% else %>
+            <span class="price" style="opacity: 0.4; text-decoration: line-through; margin: 0px 5px 0px -10px">VND <%= item.price %></span>
+            <span class="price">VND <%= (item.price * item.promo).to_f / 100 %></span>
+          <% end %>
         </span>
       </div>
       <div class="wrapper-hover-hiden">
@@ -35,154 +40,14 @@
           <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='https://livedemo00.template-help.com/magento_57714/review/product/list/id/1/category/7/'; return false;">1 Review(s)</a></span>
         </div>
         <div class="actions">
-          <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('https://livedemo00.template-help.com/magento_57714/cf-aspire-sub-ohm-battery.html')">
+          <a type="button" title="Mua ngay" class="button btn-cart" href="<%= item_path(item) %>">
             <span>
-              <span>Add to Cart</span>
+              <span>Mua ngay</span>
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </li>
-<li class="item first col-xs-12 col-sm-4" itemscope="" itemtype="https://schema.org/product">
-  <div class="wrapper-hover">
-    <div class="product-image-container">
-      <a href="#" title="CF Aspire Sub Ohm Battery" class="product-image" itemprop="url">
-        <img id="product-collection-image-1" src="https://livedemo00.template-help.com/magento_57714/media/catalog/product/cache/1/small_image/210x210/9df78eab33525d08d6e5fb8d27136e95/c/f/cf-aspire-sub-ohm-battery_04.png" alt="CF Aspire Sub Ohm Battery" width="210" height="210" itemprop="image">
-      </a>
-    </div>
-    <div class="product-details">
-      <h2 class="product-name" itemprop="name">
-        <a href="#" title="CF Aspire Sub Ohm Battery">CF Aspire Sub Ohm Battery</a>
-      </h2>
-      <div class="price-box">
-        <span class="regular-price" id="product-price-1">
-          <span class="price">€14.84</span>
-        </span>
-      </div>
-      <div class="wrapper-hover-hiden">
-        <div class="ratings">
-          <div class="rating-box stars">
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <div class="rating" style="width:80%">
-              <div class="mask">
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-              </div>
-            </div>
-          </div>
-          <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='https://livedemo00.template-help.com/magento_57714/review/product/list/id/1/category/7/'; return false;">1 Review(s)</a></span>
-        </div>
-        <div class="actions">
-          <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('https://livedemo00.template-help.com/magento_57714/cf-aspire-sub-ohm-battery.html')">
-            <span>
-              <span>Add to Cart</span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</li>
-<li class="item first col-xs-12 col-sm-4" itemscope="" itemtype="https://schema.org/product">
-  <div class="wrapper-hover">
-    <div class="product-image-container">
-      <a href="#" title="CF Aspire Sub Ohm Battery" class="product-image" itemprop="url">
-        <img id="product-collection-image-1" src="https://livedemo00.template-help.com/magento_57714/media/catalog/product/cache/1/small_image/210x210/9df78eab33525d08d6e5fb8d27136e95/c/f/cf-aspire-sub-ohm-battery_04.png" alt="CF Aspire Sub Ohm Battery" width="210" height="210" itemprop="image">
-      </a>
-    </div>
-    <div class="product-details">
-      <h2 class="product-name" itemprop="name">
-        <a href="#" title="CF Aspire Sub Ohm Battery">CF Aspire Sub Ohm Battery</a>
-      </h2>
-      <div class="price-box">
-        <span class="regular-price" id="product-price-1">
-          <span class="price">€14.84</span>
-        </span>
-      </div>
-      <div class="wrapper-hover-hiden">
-        <div class="ratings">
-          <div class="rating-box stars">
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <div class="rating" style="width:80%">
-              <div class="mask">
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-              </div>
-            </div>
-          </div>
-          <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='https://livedemo00.template-help.com/magento_57714/review/product/list/id/1/category/7/'; return false;">1 Review(s)</a></span>
-        </div>
-        <div class="actions">
-          <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('https://livedemo00.template-help.com/magento_57714/cf-aspire-sub-ohm-battery.html')">
-            <span>
-              <span>Add to Cart</span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</li>
-<li class="item first col-xs-12 col-sm-4" itemscope="" itemtype="https://schema.org/product">
-  <div class="wrapper-hover">
-    <div class="product-image-container">
-      <a href="#" title="CF Aspire Sub Ohm Battery" class="product-image" itemprop="url">
-        <img id="product-collection-image-1" src="https://livedemo00.template-help.com/magento_57714/media/catalog/product/cache/1/small_image/210x210/9df78eab33525d08d6e5fb8d27136e95/c/f/cf-aspire-sub-ohm-battery_04.png" alt="CF Aspire Sub Ohm Battery" width="210" height="210" itemprop="image">
-      </a>
-    </div>
-    <div class="product-details">
-      <h2 class="product-name" itemprop="name">
-        <a href="#" title="CF Aspire Sub Ohm Battery">CF Aspire Sub Ohm Battery</a>
-      </h2>
-      <div class="price-box">
-        <span class="regular-price" id="product-price-1">
-          <span class="price">€14.84</span>
-        </span>
-      </div>
-      <div class="wrapper-hover-hiden">
-        <div class="ratings">
-          <div class="rating-box stars">
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <div class="rating" style="width:80%">
-              <div class="mask">
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-              </div>
-            </div>
-          </div>
-          <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='https://livedemo00.template-help.com/magento_57714/review/product/list/id/1/category/7/'; return false;">1 Review(s)</a></span>
-        </div>
-        <div class="actions">
-          <button type="button" title="Add to Cart" class="button btn-cart" onclick="setLocation('https://livedemo00.template-help.com/magento_57714/cf-aspire-sub-ohm-battery.html')">
-            <span>
-              <span>Add to Cart</span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</li>
+

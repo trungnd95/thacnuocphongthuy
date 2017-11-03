@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
         errors = $.parseJSON(xhr.responseText);
         for(var key in errors) {
           if(key.includes('content'))
-            toastr["error"]("Nội dung quá ngắn. Bạn đang muốn spam trang web sao???");
+            toastr["error"]("Không thành công. Nội dung quá ngắn. Bạn đang muốn spam trang web sao???");
         }
       }
     })

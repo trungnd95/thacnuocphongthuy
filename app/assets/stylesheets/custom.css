@@ -49,12 +49,12 @@
 }
 
 @media all and (min-width: 1401px) {
-  .nav {
+  .cms-home .nav {
     padding-left: 50% !important ;
   }
 }
 
-@media all and (max-width: 1400px) {
+@media all {
   .nav {
     padding-left: 24% !important ;
   }
@@ -62,4 +62,22 @@
 
 a.sub_main_menu:hover {
   color: #fff !important;
+}
+
+@media (min-width: 678px) and (max-width: 991px) {
+  .header-switchers .header-button.full_mode .header-button-title .current {
+    font-size: 15px;
+  }
+  .nav {
+    padding-left: 18% !important;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 677px) {
+  .header-switchers .header-button.full_mode .header-button-title .current {
+    font-size: 13px;
+  }
+  .nav {
+    padding-left: 13% !important;
+  }
 }
