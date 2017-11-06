@@ -15,7 +15,7 @@
             <% cat.get_items.flatten.each do |item| %>
               <li class="swiper-slide" itemscope>
                 <a class="product-image" href="<%= item_path(item) %>" title="<%= item.name %>" itemprop="url" style="margin-bottom:10px"">
-                  <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" width="300" height="228" alt="" itemprop="image" />
+                  <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" width="300" height="228" alt="" itemprop="image" class="img-responsive" />
                 </a>
                 <div class="product-details">
                   <div class="p-left">
@@ -32,7 +32,6 @@
                           <%= item.price %> VND </span>
                         </p>
                       <% end %>
-
                       <p class="special-price">
                         <span class="price-label">Special Price</span>
                         <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
@@ -46,7 +45,13 @@
                     </div>
                   </div>
                   <div class="p-right">
-                    <a href="<%= item_path(item) %>" class="button"><span><span>Chi tiết</span></span></a>
+                    <a href="<%= item_path(item) %>" class="button">
+                      <span>
+                        <span>
+                          Chi tiết
+                        </span>
+                      </span>
+                    </a>
                   </div>
                 </div>
               </li>

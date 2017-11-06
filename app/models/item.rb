@@ -13,6 +13,8 @@ class Item < ApplicationRecord
       where("price > ? AND price < ?", start_range, end_range)
     end
   }
+
+  scope :top_sell_items, ->{joins(:ordered_items).group("items.id").order("COUNT(ordered_items.item_id) DESC").take(3)}
   validates :category_id, presence: true
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: {minimum: 20}

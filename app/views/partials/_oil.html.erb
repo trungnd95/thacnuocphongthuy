@@ -12,7 +12,7 @@
     <ul class="products-grid row oil-slider" id='oil-slider'>
       <% unless @categories.last.get_items.flatten.nil? %>
         <% @categories.last.get_items.flatten.each do |item| %>
-          <li class="item  first col-xs-12 col-sm-4" itemscope>
+          <li class="swiper-slide item first col-xs-12 col-sm-4" itemscope>
             <div class="wrapper-hover">
               <div class="product-image-container">
                 <a href="" title="<%= item.name %>" class="product-image" itemprop="url">
@@ -40,7 +40,7 @@
                     </span>
                   </p>
                 </div>
-                <div class="wrapper-hover-hiden">
+                <div class="wrapper-hover-hiden detail-button">
                   <div class="actions">
                     <a href="<%= item_path(item) %>" type="button" title="Add to Cart" class="button btn-cart"><span><span>Chi tiết</span></span></a>
                   </div>

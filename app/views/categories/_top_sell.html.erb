@@ -1,11 +1,15 @@
-<li class="item odd">
-  <a href="https://livedemo00.template-help.com/magento_57714/dragon-knight-mechanical-electronic.html">
-    <span class="product-image"><img src="https://livedemo00.template-help.com/magento_57714/media/catalog/product/cache/1/thumbnail/90x90/9df78eab33525d08d6e5fb8d27136e95/d/r/dragon-knight-mechanical-electronic_6_.png" alt=""></span>
-  </a>
-  <div class="product-details">
-    <p class="product-name">
-      <a href="https://livedemo00.template-help.com/magento_57714/dragon-knight-mechanical-electronic.html">
-      Dragon Knight Mechanical Electronic                         </a>
-    </p>
+<li class="postWidget">
+  <div class="postImage" style="width: 50%">
+    <a href="<%= item_path(item)%>"> <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" alt="<%= item.name %>"></a>
+  </div>
+  <div class="post-desc" style="width: 50%">
+    <div class="widget-latest-title"><a href="<%= item_path(item)%>"><%= item.name %></a></div>
+    <% if item.promo.nil?  %>
+      <span class="widget-latest-data"><%= item.price %> VND</span>
+    <% else  %>
+      <span class="widget-latest-data" style="text-decoration: line-through;"><%= item.price %> VND</span>
+      <span class="widget-latest-data" style="color: #333"><%= item.price.to_f*item.promo / 100 %> VND</span>
+    <% end %>
+    <a href="<%= item_path(item)%>" class="aw-blog-read-more all-blog">Xem thêm</a>
   </div>
 </li>

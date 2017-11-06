@@ -17,6 +17,7 @@
                 <h6 class="text-center">Không có sản phẩm !</h6>
               <% end %>
             </ul>
+            <%= will_paginate @items%>
           </div>
         </div>
         <div class="col-left sidebar col-xs-12 col-sm-3" style="margin-top: 28px">
@@ -37,7 +38,9 @@
               </div>
               <div class="block-content">
                 <ol id="recently-viewed-items" class="mini-products-list">
-                  <%= render "top_sell" %>
+                  <% @topsell_items.each do |item| %>
+                    <%= render "top_sell", item: item %>
+                  <% end %>
                 </ol>
               </div>
             </div>

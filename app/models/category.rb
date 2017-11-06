@@ -15,7 +15,7 @@ class Category < ApplicationRecord
     end
   end
 
-  def get_items tmp_items=[]
+  def get_items tmp_items=[], home_page=true
     if self.subcategories.size > 0
       self.subcategories.each do |sub|
         tmp_items << sub.get_items(tmp_items)
@@ -23,7 +23,11 @@ class Category < ApplicationRecord
     else
       tmp_items << self.items.to_a
     end
-    tmp_items.reject(&:empty?).flatten.uniq.take(5)
+    if home_page
+      tmp_items.reject(&:empty?).flatten.uniq.take(5)
+    else
+      tmp_items.reject(&:empty?).flatten.uniq
+    end
   end
 end
 

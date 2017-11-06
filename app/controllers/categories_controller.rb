@@ -13,7 +13,8 @@ class CategoriesController < ApplicationController
   private
   def load_cat
     @category = Category.find_by_id params[:id]
-    @items =  @category.get_items
+    @items =  @category.get_items([], false).paginate(page: params[:page], per_page: 1)
+    @topsell_items =  Item.top_sell_items
   end
 
   def load_categories_filter
