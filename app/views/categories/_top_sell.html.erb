@@ -2,7 +2,7 @@
   <div class="postImage" style="width: 50%">
     <a href="<%= item_path(item)%>"> <img src="<%= (item.images.count > 0) ? Image.image_thumb(item.id).first.url.url : asset_url('blank.jpg') %>" alt="<%= item.name %>"></a>
   </div>
-  <div class="post-desc" style="width: 50%">
+  <div class="post-desc" style="width: 50%; margin-top: -15px" >
     <div class="widget-latest-title"><a href="<%= item_path(item)%>"><%= item.name %></a></div>
     <% if item.promo.nil?  %>
       <span class="widget-latest-data"><%= item.price %> VND</span>
