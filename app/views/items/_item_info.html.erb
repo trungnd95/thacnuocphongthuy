@@ -1,17 +1,23 @@
 <div class="product-shop">
   <div class="additional-info">
-    <div class="product-sku">Product Code:<span class="sku-number">5435</span></div>
-    <p class="availability-only">
-      <span title="Only 4234 left">Only <strong>4234</strong> left</span>
-    </p>
+    <div class="product-sku">Mã sản phẩm:<span class="sku-number">5435</span></div>
+    <!-- <p class="availability-only">
+      <span title="Only 4234 lèt">Only <strong>4234</strong> lèt</span>
+    </p> -->
     <p class="availability in-stock" itemprop="availability">
-      <span class="label">Availability:</span>
-      <span class="value">In stock</span>
+      <span class="label">Tình trạng:</span>
+      <span class="value">
+        <% if item.availibility %>
+          Còn hàng
+        <% else %>
+          <span class="text-danger">Hết hàng</span>
+        <% end %>
+      </span>
     </p>
     <div class="clear"></div>
   </div>
   <div class="product-name secondary" itemprop="name">
-    <span class="h1">CF Aspire Sub Ohm Battery</span>
+    <span class="h1"><%= item.name %></span>
   </div>
   <div class="extra-info">
     <%= render "item_rating" %>
@@ -27,7 +33,13 @@
   <div class="product-options-bottom" style="margin-top: 10px; border-top: 2px solid #B6B1C2; padding-top: 20px">
     <div class="price-box">
       <span class="regular-price" id="product-price-1_clone">
-        <span class="price">$21.00</span>
+        <span class="price">
+          <% if item.promo.nil?  %>
+            <%= item.price %>
+          <% else %>
+            <%= item.price.to_f * item.promo / 100 %>
+          <% end %>
+        </span>
       </span>
     </div>
     <div class="add-to-cart">
@@ -36,7 +48,7 @@
         <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
       </div>
       <div class="add-to-cart-buttons">
-        <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
+        <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Giỏ hàng</span></span></button>
       </div>
     </div>
   </div>

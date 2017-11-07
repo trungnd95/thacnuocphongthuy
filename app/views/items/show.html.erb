@@ -1,4 +1,4 @@
-<div class="main-container col1-layout">
+ <div class="main-container col1-layout">
   <%= render "item_crumbs", item: @item %>
   <div class="container">
     <div class="main">
@@ -13,15 +13,15 @@
                   <input type="hidden" name="related_product" id="related-products-field" value="">
                 </div>
                 <div class="product-img-box col-xs-12  col-lg-8 col-sm-6">
-                  <%= render "item_view_zoom" %>
+                  <%= render "item_view_zoom", item: @item %>
                 </div>
                 <div class="col-xs-12 col-lg-4 col-sm-6">
-                  <%= render "item_info" %>
+                  <%= render "item_info", item: @item %>
                 </div>
               </form>
             </div>
             <div class="product-collateral toggle-content tabs">
-              <%= render "item_collateral" %>
+              <%= render "item_collateral", item: @item %>
             </div>
             <div id="block-related">
               <h2 class="odd">Related Products</h2>
