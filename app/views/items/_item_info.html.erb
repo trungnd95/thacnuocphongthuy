@@ -1,9 +1,11 @@
 <div class="product-shop">
   <div class="additional-info">
     <div class="product-sku">Mã sản phẩm:<span class="sku-number">5435</span></div>
-    <!-- <p class="availability-only">
-      <span title="Only 4234 lèt">Only <strong>4234</strong> lèt</span>
-    </p> -->
+    <% unless item.promo.nil? %>
+      <p class="availability-only">
+        <span title="Only 4234 left">Khuyến mãi <strong><%= item.promo %> % </strong></span>
+      </p>
+    <% end %>
     <p class="availability in-stock" itemprop="availability">
       <span class="label">Tình trạng:</span>
       <span class="value">
@@ -25,7 +27,14 @@
   <div class="price-info" itemprop="price">
     <div class="price-box">
       <span class="regular-price" id="product-price-1">
-        <span class="price">$21.00</span>
+        <span class="price">
+          <% unless item.promo.nil? %>
+            <span style="text-decoration: line-through; font-size: 18px; opacity: .6"><%= number_to_currency(item.price, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</span>
+            <span><%= number_to_currency(item.price.to_f*(100-item.promo) / 100, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</span>
+          <% else  %>
+            <span><%= number_to_currency(item.price, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</span>
+          <% end  %>
+        </span>
       </span>
     </div>
   </div>

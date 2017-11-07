@@ -23,16 +23,23 @@
             <div class="product-collateral toggle-content tabs">
               <%= render "item_collateral", item: @item %>
             </div>
-            <div id="block-related">
-              <h2 class="odd">Related Products</h2>
-              <p class="block-subtitle even">Check items to add to the cart or&nbsp;<a href="#" onclick="selectAllRelated(this); return false;">select all</a></p>
+            <div id="block-related" style="margin-top: 25px">
+              <h2 class="odd">Sản phẩm cùng loại</h2>
+              <p class="block-subtitle even related_items" style="float: right;
+    margin-top: -60px;"><a href="<%= category_path(@item.category.id) %>">Xem tất cả</a></p>
               <ul class="swipe-carousel last odd">
-                <%= render "related_item" %>
+                <% @related_items.each do |related| %>
+                  <%= render "related_item", related: related %>
+                <% end  %>
               </ul>
             </div>
-            <div id="upsell-product">
-              <h2>You may also be interested in the following product(s)</h2>
-              <%= render "top_sell_item" %>
+            <div id="upsell-product" style="margin-top: 25px">
+              <h2>Sản phẩm bán chạy</h2>
+              <ul class="up-sell-carousel-1">
+                <% @topsell_items.each do |top| %>
+                  <%= render "top_sell_item", top: top %>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>

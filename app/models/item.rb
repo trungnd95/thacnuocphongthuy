@@ -15,6 +15,8 @@ class Item < ApplicationRecord
   }
 
   scope :top_sell_items, ->{joins(:ordered_items).group("items.id").order("COUNT(ordered_items.item_id) DESC").take(3)}
+  scope :related, ->(cat_id, current_id){where(category_id: cat_id).where.not(id: current_id).limit(5)}
+
   validates :category_id, presence: true
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: {minimum: 20}

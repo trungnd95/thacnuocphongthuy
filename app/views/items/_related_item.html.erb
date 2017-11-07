@@ -1,26 +1,31 @@
- <li class="swiper-slide" itemscope itemtype="https://schema.org/product" style="height: 400px">
-  <a class="product-image" href="https://livedemo00.template-help.com/magento_57714/freedom-vape-handheld-personal.html" title="Freedom Vape Handheld Personal" itemprop="url">
-    <img src="https://livedemo00.template-help.com/magento_57714/media/catalog/product/cache/1/thumbnail/228x/9df78eab33525d08d6e5fb8d27136e95/f/r/freedom-vape-handheld-personal-vaporizer_06.png" alt="Freedom Vape Handheld Personal" itemprop="image" />
+ <li class="swiper-slide" style="height: 400px">
+  <a class="product-image" href="<%= item_path(related)  %>" itemprop="url">
+    <img src="<%= (related.images.count > 0) ? Image.image_thumb(related.id).first.url.url : asset_url('blank.jpg') %>" alt="<%= related.name %>" itemprop="image" />
   </a>
   <div class="product-details">
     <div class="p-left">
-      <h2 class="product-name" itemprop="name" style="border-bottom: none !important; padding-bottom: 10px !important; margin-bottom: 0px !important">
-        <a href="https://livedemo00.template-help.com/magento_57714/freedom-vape-handheld-personal.html" title="Freedom Vape Handheld Personal)">
-          Freedom Vape Handheld Personal
+      <h3 class="product-name text-center"  itemprop="name" style="border-bottom: none !important; padding-bottom: 10px !important; margin-bottom: 0px !important">
+        <a href="<%= item_path(related)%>" title="<%= related.name  %>">
+          <%= related.name %>
         </a>
-      </h2>
+      </h3>
       <div class="price-box-item price-box">
-        <p class="old-price">
-          <span class="price-label">Regular Price:</span>
-          <span class="price" id="old-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
-          $21.00 </span>
-        </p>
-
-        <p class="special-price">
-          <span class="price-label">Special Price</span>
-          <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
-          $18.00</span>
-        </p>
+        <% unless related.promo.blank? %>
+          <p class="old-price">
+            <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
+            <%= number_to_currency(related.price, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</span>
+          </p>
+          <p class="special-price">
+            <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
+              <%= number_to_currency(related.price.to_f*(100-related.promo) / 100, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND
+            </span>
+          </p>
+        <% else %>
+          <p class="special-price">
+            <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
+            <%= number_to_currency(related.price, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</span>
+          </p>
+        <% end %>
       </div>
     </div>
   </div>

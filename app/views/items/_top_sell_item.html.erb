@@ -1,48 +1,51 @@
-<ul class="up-sell-carousel-1">
-  <li class="swiper-slide" itemscope itemtype="https://schema.org/product" style="height: 400px">
-    <a class="product-image" href="https://livedemo00.template-help.com/magento_57714/freedom-vape-handheld-personal.html" title="Freedom Vape Handheld Personal" itemprop="url">
-      <img src="https://livedemo00.template-help.com/magento_57714/media/catalog/product/cache/1/thumbnail/228x/9df78eab33525d08d6e5fb8d27136e95/f/r/freedom-vape-handheld-personal-vaporizer_06.png" alt="Freedom Vape Handheld Personal" itemprop="image" />
-    </a>
-    <div class="product-details">
-      <div class="p-left">
-        <h2 class="product-name" itemprop="name" style="border-bottom: none !important; padding-bottom: 10px !important; margin-bottom: 0px !important">
-          <a href="https://livedemo00.template-help.com/magento_57714/freedom-vape-handheld-personal.html" title="Freedom Vape Handheld Personal)">
-            Freedom Vape Handheld Personal
-          </a>
-        </h2>
-        <div class="ratings">
-          <div class="rating-box stars">
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <i class="review-icon"></i>
-            <div class="rating" style="width:40%">
-              <div class="mask">
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-                <i class="review-icon"></i>
-              </div>
+<li class="swiper-slide"style="height: 400px">
+  <a class="product-image" href="<%= item_path(top) %>" itemprop="url">
+    <img src="<%= (top.images.count > 0) ? Image.image_thumb(top.id).first.url.url : asset_url('blank.jpg') %>" alt="<%= top.name %>" itemprop="image" />
+  </a>
+  <div class="product-details">
+    <div class="p-left">
+      <h2 class="product-name" itemprop="name" style="border-bottom: none !important; padding-bottom: 10px !important; margin-bottom: 0px !important">
+        <a href="<%= item_path(top)%>" title="<%= top.name %>">
+          <%= top.name %>
+        </a>
+      </h2>
+      <div class="ratings">
+        <div class="rating-box stars">
+          <i class="review-icon"></i>
+          <i class="review-icon"></i>
+          <i class="review-icon"></i>
+          <i class="review-icon"></i>
+          <i class="review-icon"></i>
+          <div class="rating" style="width:40%">
+            <div class="mask">
+              <i class="review-icon"></i>
+              <i class="review-icon"></i>
+              <i class="review-icon"></i>
+              <i class="review-icon"></i>
+              <i class="review-icon"></i>
             </div>
           </div>
         </div>
-        <div class="price-box-item price-box">
+      </div>
+      <div class="price-box-item price-box">
+        <% unless top.promo.blank? %>
           <p class="old-price">
-            <span class="price-label">Regular Price:</span>
-            <span class="price" id="old-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
-            $21.00 </span>
-          </p>
-
-          <p class="special-price">
-            <span class="price-label">Special Price</span>
             <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
-            $18.00</span>
+            <%= number_to_currency(top.price, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</span>
           </p>
-        </div>
+          <p class="special-price">
+            <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
+              <%= number_to_currency(top.price.to_f*(100-top.promo) / 100, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND
+            </span>
+          </p>
+        <% else %>
+          <p class="special-price">
+            <span class="price" id="product-price-5-widget-catalogsale-dd73e02cfd0daca86f7ebcee23400f19">
+            <%= number_to_currency(top.price, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</span>
+          </p>
+        <% end %>
       </div>
     </div>
-  </li>
-</ul>
+  </div>
+</li>
 

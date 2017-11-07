@@ -7,69 +7,7 @@
       </div>
     </div>
   </dd>
-  <dt class="tab"><span id="additional">Additional Information</span></dt>
-  <dd class="tab-container">
-    <div class="tab-content">
-      <h2>Additional Information</h2>
-      <table class="data-table" id="product-attribute-specs-table">
-        <colgroup><col width="25%">
-          <col>
-        </colgroup>
-        <tbody>
-          <tr class="first odd">
-            <th class="label">Brand</th>
-            <td class="data last">CF</td>
-          </tr>
-          <tr class="even">
-            <th class="label">Manufacturer</th>
-            <td class="data last">USA</td>
-          </tr>
-          <tr class="odd">
-            <th class="label">Features </th>
-            <td class="data last">Auto-protect function to prevent overcharging; Manual on/off feature for child safety; Good vapor volume</td>
-          </tr>
-          <tr class="even">
-            <th class="label">Battery capacity</th>
-            <td class="data last">650 mAh </td>
-          </tr>
-          <tr class="odd">
-            <th class="label">Variable voltage</th>
-            <td class="data last">6.0W-18.0W</td>
-          </tr>
-          <tr class="even">
-            <th class="label">Waterproof</th>
-            <td class="data last">Yes</td>
-          </tr>
-          <tr class="odd">
-            <th class="label">Material</th>
-            <td class="data last">plastic</td>
-          </tr>
-          <tr class="even">
-            <th class="label">Removable Drip Tip</th>
-            <td class="data last">Yes</td>
-          </tr>
-          <tr class="odd">
-            <th class="label">LED tip</th>
-            <td class="data last">No</td>
-          </tr>
-          <tr class="even">
-            <th class="label">Minimum Resistance</th>
-            <td class="data last">0.6 ohm</td>
-          </tr>
-          <tr class="odd">
-            <th class="label">Ecolabel</th>
-            <td class="data last">Yes</td>
-          </tr>
-          <tr class="last even">
-            <th class="label">Capacity</th>
-            <td class="data last">1.5ml</td>
-          </tr>
-        </tbody>
-      </table>
-      <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>
-    </div>
-  </dd>
-  <dt class="tab"><span id="reviews">Reviews</span></dt>
+  <dt class="tab"><span id="reviews">Đánh gía</span></dt>
   <dd class="tab-container">
     <div class="tab-content">
       <div class="box-collateral box-reviews" id="customer-reviews">
@@ -166,12 +104,15 @@
   <dt class="tab last"><span id="catalog.product.video">Video</span></dt>
   <dd class="tab-container last">
     <div class="tab-content">
-
       <div class="video-box box-collateral">
         <h2>Video</h2>
         <div class="box-collateral-content">
           <div class="video">
-           <iframe src="https://www.youtube.com/embed/q0SDGLjRH2k?wmode=opaque" id="video-frame" allowfullscreen="" frameborder="0"></iframe>
+            <% unless item.video.blank? %>
+              <iframe src="<%= item.video %>" id="video-frame" allowfullscreen="" frameborder="0"></iframe>
+            <% else %>
+              Không có
+            <% end %>
          </div>
        </div>
      </div>
